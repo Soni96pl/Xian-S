@@ -1,5 +1,4 @@
-from mongokit import *
-import datetime
+from mongokit import Connection, Document
 import yaml
 
 with open("config.yml", 'r') as config_file:
@@ -8,6 +7,7 @@ with open("config.yml", 'r') as config_file:
 connection = Connection(cfg['mongodb']['host'], cfg['mongodb']['port'])
 database = cfg['mongodb']['database']
 
+
 @connection.register
 class City(Document):
     __collection__ = 'cities'
@@ -15,7 +15,7 @@ class City(Document):
     structure = {
         'name': unicode,
         'country': unicode,
-        'population' :int,
+        'population': int,
         'alternate_names': [unicode],
         'coordinates': [int]
     }
