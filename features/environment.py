@@ -1,14 +1,16 @@
-from database import connection
+import os
 import yaml
 
+import xiandb as db
 
-with open("config.yml", 'r') as config_file:
+
+with open(os.path.expanduser('~') + '/xian/config.yml', 'r') as config_file:
     cfg = yaml.load(config_file)
 
 
 def before_all(context):
     context.root = cfg['app']['root']
-    context.c = connection
+    context.db = db
 
 
 def before_scenario(context, scenario):
