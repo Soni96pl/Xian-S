@@ -1,3 +1,4 @@
+@XIANS-2
 @XIANS-4
 Feature: Places
 	#In order to chose places to go
@@ -27,4 +28,18 @@ Feature: Places
 			And I have a ListType result
 			And /0/country equals "TH" in a result
 			And /0/story/content contains "Northern" in a result
-		
+			
+
+	
+	@XIANS-6 @XIANS-3
+	Scenario: I want to get pictures of a town
+		Given I define that city is "Kuala Lumpur"
+		When I make a GET request to :city[city]
+		Then I have a JSON response
+		Then I define that id is /0/id from a result
+		When I make a GET request to :city/[id]/pictures
+		Then I have a JSON response
+		    And I have a ListType result
+		    And /0/country equals "MY" in a result
+		    And /0/pictures is of ListType type in a result
+		    And /0/pictures/0/url contains "http" in a result
