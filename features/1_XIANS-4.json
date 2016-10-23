@@ -1,0 +1,362 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-4.feature:10", 
+      "name": "I want to find a place by its name.", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-4.feature:11", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Warsaw\""
+              }
+            ], 
+            "location": "features/steps/steps.py:32"
+          }, 
+          "name": "I define that city is \"Warsaw\"", 
+          "result": {
+            "duration": 0.000102996826171875, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-4.feature:12", 
+          "match": {
+            "arguments": [
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "city/[city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:42"
+          }, 
+          "name": "I make a GET request to :city/[city]", 
+          "result": {
+            "duration": 0.1778879165649414, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-4.feature:13", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:49"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00018405914306640625, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:14", 
+          "match": {
+            "arguments": [
+              {
+                "name": "count", 
+                "value": "8"
+              }
+            ], 
+            "location": "features/steps/steps.py:56"
+          }, 
+          "name": "I have 8 results", 
+          "result": {
+            "duration": 7.581710815429688e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:15", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "country"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"PL\""
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "country equals \"PL\" somewhere in a result", 
+          "result": {
+            "duration": 0.00020599365234375, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:16", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "coordinates"
+              }, 
+              {
+                "name": "value", 
+                "value": "[52.22977, 21.01178]"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "coordinates equals [52.22977, 21.01178] somewhere in a result", 
+          "result": {
+            "duration": 0.00015497207641601562, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-1", 
+        "XIANS-3"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-4.feature:20", 
+      "name": "I want to get details of a plase with a given name.", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-4.feature:21", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Chiang Mai\""
+              }
+            ], 
+            "location": "features/steps/steps.py:32"
+          }, 
+          "name": "I define that city is \"Chiang Mai\"", 
+          "result": {
+            "duration": 7.581710815429688e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-4.feature:22", 
+          "match": {
+            "arguments": [
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "city/[city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:42"
+          }, 
+          "name": "I make a GET request to :city/[city]", 
+          "result": {
+            "duration": 0.17080307006835938, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-4.feature:23", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:49"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.000164031982421875, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-4.feature:24", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "id"
+              }, 
+              {
+                "name": "path", 
+                "value": "/0/id"
+              }
+            ], 
+            "location": "features/steps/steps.py:37"
+          }, 
+          "name": "I define that id is /0/id from a result", 
+          "result": {
+            "duration": 9.202957153320312e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-4.feature:25", 
+          "match": {
+            "arguments": [
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "city/[id]/details"
+              }
+            ], 
+            "location": "features/steps/steps.py:42"
+          }, 
+          "name": "I make a GET request to :city/[id]/details", 
+          "result": {
+            "duration": 0.007219791412353516, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-4.feature:26", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:49"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00016307830810546875, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:27", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:61"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 7.414817810058594e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:28", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "/0/country"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"TH\""
+              }
+            ], 
+            "location": "features/steps/steps.py:81"
+          }, 
+          "name": "/0/country equals \"TH\" in a result", 
+          "result": {
+            "duration": 8.893013000488281e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-4.feature:29", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "/0/story/content"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Northern\""
+              }
+            ], 
+            "location": "features/steps/steps.py:91"
+          }, 
+          "name": "/0/story/content contains \"Northern\" in a result", 
+          "result": {
+            "duration": 8.821487426757812e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-5", 
+        "XIANS-3"
+      ], 
+      "type": "scenario"
+    }
+  ], 
+  "keyword": "Feature", 
+  "location": "features/1_XIANS-4.feature:2", 
+  "name": "Places", 
+  "status": "passed", 
+  "tags": [
+    "XIANS-4"
+  ]
+}
+]
