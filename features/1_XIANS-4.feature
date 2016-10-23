@@ -6,7 +6,7 @@ Feature: Places
 	#And read their descriptions
 	#And browse their pictures
 
-
+	
 	@XIANS-1 @XIANS-3
 	Scenario: I want to find a place by its name.
 		Given I define that city is "Warsaw"
@@ -14,9 +14,9 @@ Feature: Places
 			Then I have a JSON response
 			And I have 8 results
 			And country equals "PL" somewhere in a result
-			And coordinates equals [52.22977, 21.01178] somewhere in a result
+			And coordinates equals [52.22977, 21.01178] somewhere in a result	
 
-
+	
 	@XIANS-5 @XIANS-3
 	Scenario: I want to get details of a plase with a given name.
 		Given I define that city is "Chiang Mai"
@@ -28,13 +28,13 @@ Feature: Places
 			And I have a ListType result
 			And /0/country equals "TH" in a result
 			And /0/story/content contains "Northern" in a result
+			
 
-
-
+	
 	@XIANS-6 @XIANS-3
 	Scenario: I want to get pictures of a town
 		Given I define that city is "Kuala Lumpur"
-		When I make a GET request to :city/[city]
+		When I make a GET request to :city[city]
 		Then I have a JSON response
 		Then I define that id is /0/id from a result
 		When I make a GET request to :city/[id]/pictures
