@@ -9,7 +9,7 @@ The main technologies used include Flask, Flask-RESTful, MongoDB, MongoKat,
 Redis, RQ, Scrapy.
 
 #### How to run the server?
-* Enter a valid configuration in `config.yml` and move it to `~/xian/config.yml`
+* Copy `config.yml` to `~/xian/config.yml` and enter a valid configuration
 * Install requirements with `pip install -r requirements.txt`
 * Export `FLASK_APP=path/to/the/repo/app.py`
 * Use `flask run` to run the main app
