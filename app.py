@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask
 from flask_restful import Api, Resource
 
@@ -5,11 +7,12 @@ import pymongo
 import xiandb as db
 import xianc as c
 
-from datetime import datetime
-
 app = Flask(__name__)
 app.config.from_pyfile('app.cfg')
 api = Api(app)
+
+
+wikitravel = c.Wikitravel()
 
 
 class City(Resource):
@@ -71,7 +74,7 @@ class CityDetails(Resource):
 
     def process(self, city):
         if (datetime.today() - city['story']['updated']).days > 7:
-            c.scrape_story(city)
+            wikitravel.story(city)
             story = {'status': 'updating', 'content': city['story']['content']}
         elif city['story']['existing']:
             story = {'status': 'existing', 'content': city['story']['content']}
