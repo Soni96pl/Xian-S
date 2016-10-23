@@ -65,7 +65,6 @@ class CityDetails(Resource):
                 'population': 1,
                 'story': 1
             }},
-            {'$sort': {'population': pymongo.DESCENDING}},
             {'$limit': 1}
         ]))
 
