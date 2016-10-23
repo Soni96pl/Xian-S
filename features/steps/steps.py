@@ -73,9 +73,3 @@ def validate_variable_content_multilevel(context, path, value):
 @then(u'{path} contains {value} in a result')
 def validate_variable_content(context, path, value):
     assert_in(json.loads(value), get_data(context.response, path))
-
-
-@then(u'{path} is of {variable_type} type in a result')
-def validate_variable_type(context, path, variable_type):
-    assert_equals(type(get_data(context.response, path)),
-                  getattr(types, variable_type))
