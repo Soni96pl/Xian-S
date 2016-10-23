@@ -1,9 +1,9 @@
+@XIANS-2
 @XIANS-4
 Feature: Places
 	#In order to chose places to go
 	#Users should be able to search them
 	#And read their descriptions
-	#And browse their pictures
 
 	
 	@XIANS-1 @XIANS-3
