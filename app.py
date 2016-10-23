@@ -65,17 +65,14 @@ class CityDetails(Resource):
                 'population': 1,
                 'story': 1
             }},
-            {'$sort': {
-                'isPerfect': pymongo.DESCENDING,
-                'population': pymongo.DESCENDING
-            }},
+            {'$sort': {'population': pymongo.DESCENDING}},
             {'$limit': 1}
         ]))
 
     def process(self, city):
         if (datetime.today() - city['story']['updated']).days > 7:
-            wikitravel.story(city)
             story = {'status': 'updating', 'content': city['story']['content']}
+            wikitravel.story(city['_id'])
         elif city['story']['existing']:
             story = {'status': 'existing', 'content': city['story']['content']}
         else:
