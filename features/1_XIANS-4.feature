@@ -37,7 +37,7 @@ Feature: Places
 		When I make a GET request to :city/[city]
 		Then I have a JSON response
 		Then I define that id is /0/id from a result
-		When I make a GET request to :city/[id]/pictures
+		When I make a GET request to :city/[id]/details
 		Then I have a JSON response
 		    And I have a ListType result
 		    And /0/country equals "MY" in a result
