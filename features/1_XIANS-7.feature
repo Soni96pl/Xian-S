@@ -17,5 +17,5 @@ Feature: Users
 		    | Jakub | abc       | jakub@chronow.ski |
 		Then I have a JSON response
 		    And I have a DictType result
-		    And /status equals "success"
-		    And /message equals "Signed up successfully"
+		    And /status equals "success" in a result
+		    And /message equals "Signed up successfully" in a result
