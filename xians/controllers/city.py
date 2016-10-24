@@ -1,18 +1,10 @@
 from datetime import datetime
-
-from flask import Flask
-from flask_restful import Api, Resource
+from flask_restful import Resource
 
 import pymongo
 import xiandb as db
-import xianc as c
 
-app = Flask(__name__)
-app.config.from_pyfile('app.cfg')
-api = Api(app)
-
-
-wikitravel = c.Wikitravel()
+from xians.crawlers import wikitravel
 
 
 class City(Resource):
@@ -84,8 +76,3 @@ class CityDetails(Resource):
             'country': city['country'],
             'story': story
         }
-
-
-api.add_resource(City, '/city/<int:_id>', endpoint='city_id')
-api.add_resource(City, '/city/<string:name>', endpoint='city_name')
-api.add_resource(CityDetails, '/city/<int:_id>/details')
