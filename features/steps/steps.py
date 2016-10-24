@@ -25,7 +25,11 @@ def define_variable_from_result(context, variable, path):
 def make_request(context, method, path):
     path = re.sub(r'\[(\w+)\]', lambda m: str(context.s[m.group(1)]), path)
     request = getattr(requests, method.lower())
-    context.r = request("%s/%s" % (context.root, path))
+    data = {}
+    if context.table:
+        data = dict(zip(context.table.headings, context.table[0].cells))
+        print(data)
+    context.r = request("%s/%s" % (context.root, path), data)
 
 
 @then(u'I have a {content_type} response')
