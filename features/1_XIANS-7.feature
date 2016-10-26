@@ -6,7 +6,7 @@ Feature: Users
 	#And login
 	#And logout
 
-	
+
 	@XIANS-10 @XIANS-8
 	Scenario: I want to signup
 		Given I define that name is "Jakub"
@@ -17,5 +17,5 @@ Feature: Users
 		    | Jakub | abc       | jakub@chronow.ski |
 		Then I have a JSON response
 		    And I have a DictType result
-		    And /status equals "success" in a result
+		    And /success equals true in a result
 		    And /message equals "Signed up successfully" in a result
