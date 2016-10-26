@@ -7,4 +7,4 @@ app.config.from_pyfile('app.cfg')
 api = Api(app)
 flask_log = Logging(app)
 
-from xians.controllers import routing
+import xians.routing
