@@ -19,8 +19,11 @@ How to run the server?
 
 -  Copy ``config.yml`` to ``~/xian/config.yml`` and enter a valid
    configuration
+-  Load a databse dump or create a new one with a database tool
+
+   https://github.com/Kuba77/Xian-T/tree/master/database
 -  Install appication with ``python setup.py install``
--  Export ``FLASK_APP=xians``
+-  Set path to the app with ``export FLASK_APP=xians``
 -  Use ``flask run`` to run the main app
 -  Use ``rqscheduler -i 10 --db 0`` to run the scheduler
 -  Use ``rq worker`` to run the worker
