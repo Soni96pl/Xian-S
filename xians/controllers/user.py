@@ -21,10 +21,3 @@ class UserSignup(Resource):
                 'message': "User with a given name or password already exists"
             }
         return {'success': True, 'message': "Signed up successfully"}
-
-
-class UserProtected(Resource):
-    decorators = [jwt_required()]
-
-    def post(self):
-        return current_identity
