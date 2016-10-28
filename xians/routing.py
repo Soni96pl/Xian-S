@@ -6,3 +6,4 @@ api.add_resource(city.City, '/city/<string:name>', endpoint='city_name')
 api.add_resource(city.CityDetails, '/city/<int:_id>/details')
 
 api.add_resource(user.UserSignup, '/signup')
+api.add_resource(user.UserProtected, '/protected')

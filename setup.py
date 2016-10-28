@@ -42,12 +42,14 @@ setup(
         'Flask==0.11.1',
         'Flask-RESTful==0.3.5',
         'flask-log==0.1.0',
+        'Flask-JWT',
         'xianc',
         'xiandb'
     ],
     dependency_links=[
         'https://github.com/Kuba77/Xian-C/tarball/master#egg=xiandc',
-        'https://github.com/Kuba77/Xian-DB/tarball/master#egg=xiandb'
+        'https://github.com/Kuba77/Xian-DB/tarball/master#egg=xiandb',
+        'https://github.com/Kuba77/flask-jwt/tarball/master#egg=Flask-JWT'
     ],
     zip_safe=False
 )

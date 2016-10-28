@@ -1,4 +1,5 @@
 from flask_restful import reqparse, Resource
+from flask_jwt import jwt_required, current_identity
 
 import xiandb as db
 
@@ -20,3 +21,10 @@ class UserSignup(Resource):
                 'message': "User with a given name or password already exists"
             }
         return {'success': True, 'message': "Signed up successfully"}
+
+
+class UserProtected(Resource):
+    decorators = [jwt_required()]
+
+    def post(self):
+        return current_identity
