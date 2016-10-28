@@ -1,0 +1,251 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-7.feature:11", 
+      "name": "I want to signup", 
+      "steps": [
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-7.feature:12", 
+          "match": {
+            "arguments": [
+              {
+                "name": "method", 
+                "value": "POST"
+              }, 
+              {
+                "name": "path", 
+                "value": "signup"
+              }
+            ], 
+            "location": "features/steps/steps.py:24"
+          }, 
+          "name": "I make a POST request to :signup", 
+          "result": {
+            "duration": 0.3642239570617676, 
+            "status": "passed"
+          }, 
+          "step_type": "when", 
+          "table": {
+            "headings": [
+              "name", 
+              "password", 
+              "email"
+            ], 
+            "rows": [
+              [
+                "Jakub", 
+                "abc", 
+                "jakub@chronow.ski"
+              ]
+            ]
+          }
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-7.feature:15", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:34"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0001850128173828125, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-7.feature:16", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 7.486343383789062e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-7.feature:17", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "/success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:66"
+          }, 
+          "name": "/success equals true in a result", 
+          "result": {
+            "duration": 7.915496826171875e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-7.feature:18", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "/message"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Signed up successfully\""
+              }
+            ], 
+            "location": "features/steps/steps.py:66"
+          }, 
+          "name": "/message equals \"Signed up successfully\" in a result", 
+          "result": {
+            "duration": 7.891654968261719e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-10", 
+        "XIANS-8"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-7.feature:22", 
+      "name": "I want to auth", 
+      "steps": [
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-7.feature:23", 
+          "match": {
+            "arguments": [
+              {
+                "name": "method", 
+                "value": "POST"
+              }, 
+              {
+                "name": "path", 
+                "value": "auth"
+              }
+            ], 
+            "location": "features/steps/steps.py:24"
+          }, 
+          "name": "I make a POST request to :auth", 
+          "result": {
+            "duration": 0.3015611171722412, 
+            "status": "passed"
+          }, 
+          "step_type": "when", 
+          "table": {
+            "headings": [
+              "name", 
+              "password"
+            ], 
+            "rows": [
+              [
+                "Jakub", 
+                "abc"
+              ]
+            ]
+          }
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-7.feature:26", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:34"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0002429485321044922, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-7.feature:27", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 8.106231689453125e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-7.feature:28", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "\"access_token\""
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "\"access_token\" is in a result", 
+          "result": {
+            "duration": 7.605552673339844e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-12", 
+        "XIANS-8"
+      ], 
+      "type": "scenario"
+    }
+  ], 
+  "keyword": "Feature", 
+  "location": "features/1_XIANS-7.feature:3", 
+  "name": "Users", 
+  "status": "passed", 
+  "tags": [
+    "XIANS-9", 
+    "XIANS-7"
+  ]
+}
+]
