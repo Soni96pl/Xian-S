@@ -25,7 +25,10 @@ def define_variable_from_result(context, variable, path):
 def make_request(context, method, path):
     path = re.sub(r'\[(\w+)\]', lambda m: str(context.s[m.group(1)]), path)
     request = getattr(requests, method.lower())
-    context.r = request("%s/%s" % (context.root, path))
+    data = {}
+    if context.table:
+        data = dict(zip(context.table.headings, context.table[0].cells))
+    context.r = request("%s/%s" % (context.root, path), data)
 
 
 @then(u'I have a {content_type} response')
@@ -47,7 +50,7 @@ def validate_result_type(context, result_type):
 
 @then(u'{variable} is in a result')
 def validate_variable_in(context, variable):
-    assert_in(context.response, json.loads(variable))
+    assert_in(json.loads(variable), context.response)
 
 
 @then(u'{variable} is somewhere in a result')

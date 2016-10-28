@@ -1,5 +1,6 @@
 app:
   root: http://localhost:5000
+  jwt_secret: SECRET_KEY
 mongodb:
   host: localhost
   port: 27017
