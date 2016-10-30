@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from behave import given, when, then
+from behave.matchers import register_type
 from nose.tools import assert_in, assert_equals
 from assertions import assert_somewhere_in, assert_somewhere_equals
 
@@ -9,6 +10,21 @@ import re
 import requests
 
 from tools import get_data
+
+
+def parse_boolean(text):
+    return bool(text.strip())
+
+parse_boolean.pattern = r'\s?\w*\s?'
+register_type(optional=parse_boolean)
+
+
+@given(u'I authorize as {name} with password {password}')
+def authorize(context, name, password):
+    name, password = (json.loads(name), json.loads(password))
+    request = requests.post("%s/auth" % (context.root),
+                            data={'name': name, 'password': password})
+    context.access_token = request.json()['access_token']
 
 
 @given(u'I define that {variable} is {value}')
@@ -21,14 +37,21 @@ def define_variable_from_result(context, variable, path):
     context.s[variable] = get_data(context.response, path)
 
 
-@when(u'I make a {method} request to :{path}')
-def make_request(context, method, path):
+@when(u'I make a{authorized:optional} {method} request to :{path}')
+def make_request(context, authorized, method, path):
     path = re.sub(r'\[(\w+)\]', lambda m: str(context.s[m.group(1)]), path)
-    request = getattr(requests, method.lower())
-    data = {}
+    arguments = {
+        'url': "%s/%s" % (context.root, path),
+        'method': method.lower(),
+        'headers': {}
+    }
+
     if context.table:
-        data = dict(zip(context.table.headings, context.table[0].cells))
-    context.r = request("%s/%s" % (context.root, path), data)
+        arguments['data'] = dict(zip(context.table.headings, context.table[0].cells))
+    if authorized:
+        arguments['headers']['authorization'] = 'JWT ' + context.access_token
+
+    context.r = requests.request(**arguments)
 
 
 @then(u'I have a {content_type} response')
