@@ -1,0 +1,572 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-13.feature:12", 
+      "name": "I want to add a favorite with a given name", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-13.feature:13", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:22"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.31095290184020996, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:14", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Bangkok\""
+              }
+            ], 
+            "location": "features/steps/steps.py:30"
+          }, 
+          "name": "I define that city is \"Bangkok\"", 
+          "result": {
+            "duration": 0.0001270771026611328, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-13.feature:15", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "city/[city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a GET request to :city/[city]", 
+          "result": {
+            "duration": 0.18160486221313477, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-13.feature:16", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0001499652862548828, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:17", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "id"
+              }, 
+              {
+                "name": "path", 
+                "value": "/0/id"
+              }
+            ], 
+            "location": "features/steps/steps.py:35"
+          }, 
+          "name": "I define that id is /0/id from a result", 
+          "result": {
+            "duration": 7.796287536621094e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-13.feature:18", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "PUT"
+              }, 
+              {
+                "name": "path", 
+                "value": "favorite/[id]"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a authorized PUT request to :favorite/[id]", 
+          "result": {
+            "duration": 0.007066965103149414, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-13.feature:19", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0002770423889160156, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:20", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:69"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 8.702278137207031e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:21", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 8.606910705566406e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-16", 
+        "XIANS-14"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-13.feature:25", 
+      "name": "I want to list the favorites", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-13.feature:26", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:22"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.2906050682067871, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-13.feature:27", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "favorites"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a authorized GET request to :favorites", 
+          "result": {
+            "duration": 0.007601022720336914, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-13.feature:28", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00015497207641601562, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:29", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:69"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 8.106231689453125e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:30", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "0/name"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Bangkok\""
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "0/name equals \"Bangkok\" in a result", 
+          "result": {
+            "duration": 9.608268737792969e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-18", 
+        "XIANS-14"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-13.feature:34", 
+      "name": "I want to remove a favorite with a given name", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-13.feature:35", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:22"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.29134702682495117, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:36", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Bangkok\""
+              }
+            ], 
+            "location": "features/steps/steps.py:30"
+          }, 
+          "name": "I define that city is \"Bangkok\"", 
+          "result": {
+            "duration": 0.00010895729064941406, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-13.feature:37", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "city/[city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a GET request to :city/[city]", 
+          "result": {
+            "duration": 0.16449785232543945, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-13.feature:38", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0001418590545654297, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:39", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "id"
+              }, 
+              {
+                "name": "path", 
+                "value": "/0/id"
+              }
+            ], 
+            "location": "features/steps/steps.py:35"
+          }, 
+          "name": "I define that id is /0/id from a result", 
+          "result": {
+            "duration": 7.987022399902344e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-13.feature:40", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "DELETE"
+              }, 
+              {
+                "name": "path", 
+                "value": "favorite/[id]"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a authorized DELETE request to :favorite/[id]", 
+          "result": {
+            "duration": 0.0066149234771728516, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-13.feature:41", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0006988048553466797, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:42", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:69"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 8.320808410644531e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-13.feature:43", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 9.417533874511719e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-17", 
+        "XIANS-14"
+      ], 
+      "type": "scenario"
+    }
+  ], 
+  "keyword": "Feature", 
+  "location": "features/1_XIANS-13.feature:3", 
+  "name": "Favorites", 
+  "status": "passed", 
+  "tags": [
+    "XIANS-15", 
+    "XIANS-13"
+  ]
+}
+]
