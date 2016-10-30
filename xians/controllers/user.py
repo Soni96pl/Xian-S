@@ -1,10 +1,10 @@
+from flask import make_response, request
 from flask_restful import reqparse, Resource
-from flask_jwt import jwt_required, current_identity
 
 import xiandb as db
 
 
-class UserSignup(Resource):
+class User(Resource):
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str, required=True,
@@ -15,9 +15,20 @@ class UserSignup(Resource):
                             help="Email is required!")
         params = parser.parse_args()
 
-        if not db.User.signup(**params):
-            return {
-                'success': False,
-                'message': "User with a given name or password already exists"
+        user = db.User.add(**params)
+
+        if user:
+            location = '%susers/%s' % (request.url_root, user.inserted_id)
+            headers = {
+                'Location': location
             }
-        return {'success': True, 'message': "Signed up successfully"}
+
+            return {
+                'success': True,
+                'message': "Signed up successfully"
+            }, 201, headers
+
+        return {
+            'success': False,
+            'message': "User with a given name or email already exists"
+        }, 409
