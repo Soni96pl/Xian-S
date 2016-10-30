@@ -9,4 +9,5 @@ api.add_resource(city.CityDetails, '/city/<int:_id>/details')
 api.add_resource(user.User, '/users')
 
 
+api.add_resource(favorite.Favorites, '/favorites')
 api.add_resource(favorite.Favorite, '/favorite/<int:city_id>')
