@@ -1,5 +1,34 @@
-from flask_restful import reqparse, Resource
+from flask_restful import Resource
 from flask_jwt import jwt_required, current_identity
+
+import pymongo
+import xiandb as db
+
+
+class Favorites(Resource):
+    decorators = [jwt_required()]
+
+    def get(self):
+        def process(city):
+            return {
+                'id': city['_id'],
+                'name': city['name'],
+                'coordinates': city['coordinates'],
+                'country': city['country']
+            }
+
+        return map(process, db.City.aggregate([
+            {'$match': {'_id': {'$in': current_identity['favorites']}}},
+            {'$project': {
+                'name': 1,
+                'coordinates': 1,
+                'country': 1,
+                'population': 1
+            }},
+            {'$sort': {
+                'population': pymongo.DESCENDING
+            }}
+        ]))
 
 
 class Favorite(Resource):
