@@ -1,4 +1,4 @@
-from flask import make_response, request
+from flask import request
 from flask_restful import reqparse, Resource
 
 import xiandb as db
