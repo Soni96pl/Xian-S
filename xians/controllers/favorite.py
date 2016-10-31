@@ -7,28 +7,15 @@ import xiandb as db
 
 class Favorites(Resource):
     decorators = [jwt_required()]
+    default_fields = ['_id', 'name', 'coordinates', 'country', 'population']
+    default_sort = [('population', pymongo.DESCENDING)]
 
     def get(self):
-        def process(city):
-            return {
-                'id': city['_id'],
-                'name': city['name'],
-                'coordinates': city['coordinates'],
-                'country': city['country']
-            }
+        fields, sort = self.get_query()
 
-        return map(process, db.City.aggregate([
-            {'$match': {'_id': {'$in': current_identity['favorites']}}},
-            {'$project': {
-                'name': 1,
-                'coordinates': 1,
-                'country': 1,
-                'population': 1
-            }},
-            {'$sort': {
-                'population': pymongo.DESCENDING
-            }}
-        ]))
+        return db.City.search(_id={'$in': current_identity['favorites']},
+                              fields=fields,
+                              sort=sort)
 
 
 class Favorite(Resource):
