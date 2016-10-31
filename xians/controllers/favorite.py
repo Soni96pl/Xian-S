@@ -1,8 +1,9 @@
-from flask_restful import Resource
 from flask_jwt import jwt_required, current_identity
 
 import pymongo
 import xiandb as db
+
+from xians.resource import Resource
 
 
 class Favorites(Resource):
