@@ -17,10 +17,6 @@ class Favorites(Resource):
                               fields=fields,
                               sort=sort)
 
-
-class Favorite(Resource):
-    decorators = [jwt_required()]
-
     def put(self, city_id):
         success = current_identity.add_favorite(city_id)
         if success:
