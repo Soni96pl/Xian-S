@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='xians',
-    version='0.1.2',
+    version='0.1.3',
 
     description='A Xian server',
     long_description=long_description,
@@ -34,7 +34,7 @@ setup(
         'Programming Language :: Python :: 2.7'
     ],
 
-    keywords='xian crawler',
+    keywords='xian server',
     packages=['xians', 'xians.controllers'],
     package_data={'xians': ['app.cfg']},
 
