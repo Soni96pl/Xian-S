@@ -8,5 +8,7 @@ api.add_resource(city.City, '/cities/<string:name>', endpoint='city_name')
 api.add_resource(user.User, '/users')
 
 
-api.add_resource(favorite.Favorites, '/favorites')
-api.add_resource(favorite.Favorite, '/favorite/<int:city_id>')
+api.add_resource(favorite.Favorites, '/favorites', enpoint='favorites')
+api.add_resource(favorite.Favorites,
+                 '/favorites/<int:city_id>',
+                 endpoint='favorites_city_id')
