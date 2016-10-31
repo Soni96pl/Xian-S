@@ -27,8 +27,7 @@ class City(Resource):
 
         if _id:
             return map(
-                self.process,
-                db.City.search(_id=_id, fields=fields, sort=sort)
+                process, db.City.search(_id=_id, fields=fields, sort=sort)
             )
 
         return db.City.search(name=name, fields=fields, sort=sort)
