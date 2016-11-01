@@ -12,19 +12,24 @@
           "match": {
             "arguments": [
               {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
                 "name": "method", 
                 "value": "POST"
               }, 
               {
                 "name": "path", 
-                "value": "signup"
+                "value": "users"
               }
             ], 
-            "location": "features/steps/steps.py:24"
+            "location": "features/steps/steps.py:40"
           }, 
-          "name": "I make a POST request to :signup", 
+          "name": "I make a POST request to :users", 
           "result": {
-            "duration": 0.3642239570617676, 
+            "duration": 0.3399379253387451, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -53,11 +58,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:34"
+            "location": "features/steps/steps.py:57"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0001850128173828125, 
+            "duration": 0.0002841949462890625, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -72,11 +77,11 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:46"
+            "location": "features/steps/steps.py:69"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.486343383789062e-05, 
+            "duration": 7.891654968261719e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -95,11 +100,11 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:66"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "/success equals true in a result", 
           "result": {
-            "duration": 7.915496826171875e-05, 
+            "duration": 8.797645568847656e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -118,11 +123,11 @@
                 "value": "\"Signed up successfully\""
               }
             ], 
-            "location": "features/steps/steps.py:66"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "/message equals \"Signed up successfully\" in a result", 
           "result": {
-            "duration": 7.891654968261719e-05, 
+            "duration": 8.392333984375e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -145,6 +150,11 @@
           "match": {
             "arguments": [
               {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
                 "name": "method", 
                 "value": "POST"
               }, 
@@ -153,11 +163,11 @@
                 "value": "auth"
               }
             ], 
-            "location": "features/steps/steps.py:24"
+            "location": "features/steps/steps.py:40"
           }, 
           "name": "I make a POST request to :auth", 
           "result": {
-            "duration": 0.3015611171722412, 
+            "duration": 0.3014190196990967, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -184,11 +194,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:34"
+            "location": "features/steps/steps.py:57"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002429485321044922, 
+            "duration": 0.0001850128173828125, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -203,11 +213,11 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:46"
+            "location": "features/steps/steps.py:69"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 8.106231689453125e-05, 
+            "duration": 7.796287536621094e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -222,7 +232,7 @@
                 "value": "\"access_token\""
               }
             ], 
-            "location": "features/steps/steps.py:51"
+            "location": "features/steps/steps.py:74"
           }, 
           "name": "\"access_token\" is in a result", 
           "result": {
