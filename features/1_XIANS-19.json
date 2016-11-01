@@ -1,0 +1,150 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:15", 
+      "name": "I want to add a new trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:16", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:22"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.3055558204650879, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:17", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "POST"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:40"
+          }, 
+          "name": "I make a authorized POST request to :trips", 
+          "result": {
+            "duration": 0.010864973068237305, 
+            "status": "passed"
+          }, 
+          "step_type": "when", 
+          "table": {
+            "headings": [
+              "name", 
+              "date"
+            ], 
+            "rows": [
+              [
+                "America 2016", 
+                "1465146000"
+              ]
+            ]
+          }
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:20", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:57"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00013780593872070312, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:21", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:69"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 7.200241088867188e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:22", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 7.891654968261719e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-22", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }
+  ], 
+  "keyword": "Feature", 
+  "location": "features/1_XIANS-19.feature:3", 
+  "name": "Trips", 
+  "status": "passed", 
+  "tags": [
+    "XIANS-21", 
+    "XIANS-19"
+  ]
+}
+]
