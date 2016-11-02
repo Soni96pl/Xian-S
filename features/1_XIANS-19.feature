@@ -20,3 +20,16 @@ Feature: Trips
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result
+
+
+	@XIANS-23 @XIANS-20
+	Scenario: I want to get trip details
+		Given I authorize as "Jakub" with password "abc"
+		When I make a authorized GET request to :trips
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that trip is 0/_id from a result
+		When I make a authorized GET request to :trips/[trip]
+		Then I have a JSON response
+		    And I have a ListType result
+		    And 0/name equals "America 2016" in a result

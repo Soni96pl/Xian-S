@@ -15,6 +15,13 @@ class Trip(Resource):
     default_fields = ['user_id', 'name', 'segments']
     default_sort = [('date', pymongo.DESCENDING)]
 
+    def get(self, _id=None):
+        fields, sort = self.get_query()
+
+        return db.Trip.search(_id=_id,
+                              fields=fields,
+                              sort=sort)
+
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str, required=True,

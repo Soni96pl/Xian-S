@@ -15,3 +15,4 @@ api.add_resource(favorite.Favorites,
 
 
 api.add_resource(trip.Trip, '/trips', endpoint='trips')
+api.add_resource(trip.Trip, '/trips/<int:_id>', endpoint='trips_id')
