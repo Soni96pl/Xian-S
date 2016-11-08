@@ -95,3 +95,22 @@ class Segment(Resource):
                 'success': True,
                 'message': "Segment updated successfully"
             }, 201
+
+    def delete(self, trip_id, segment_id):
+        trip = db.Trip.get(trip_id)
+        if not trip:
+            return {
+                'success': False,
+                'message': "Trip with a given id doesn't exist"
+            }, 404
+
+        if not trip.remove_segment(segment_id):
+            return {
+                'success': False,
+                'message': "Segment with a given id doesn't exist"
+            }, 404
+
+        return {
+            'success': True,
+            'message': "Segment removed successfully"
+        }, 201

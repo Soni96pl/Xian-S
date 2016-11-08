@@ -80,3 +80,18 @@ Feature: Trips
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result
+
+
+
+	@XIANS-26 @XIANS-20
+	Scenario: I want to remove a segment
+		Given I authorize as "Jakub" with password "abc"
+		When I make a authorized GET request to :trips
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that trip_id is 0/_id from a result
+		    And I define that segment_id is 0/segments/0/_id from a result
+		When I make a authorized DELETE request to :trips/[trip_id]/segments/[segment_id]
+		Then I have a JSON response
+		    And I have a DictType result
+		    And success equals true in a result
