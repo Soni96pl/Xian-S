@@ -1,23 +1,31 @@
 # -*- coding: utf-8 -*-
+from bson import json_util as json
+
 from behave import given, when, then
 from behave.matchers import register_type
 from nose.tools import assert_in, assert_equals
-from assertions import assert_somewhere_in, assert_somewhere_equals
 
-import types
-import json
 import re
 import requests
+import types
+import time
 
+from assertions import assert_somewhere_in, assert_somewhere_equals
 from tools import get_data
+from preprocessors import prepare_text
 
 
-def parse_boolean(text):
-    return bool(text.strip())
+def timestamp_converter(input):
+    return str(int(time.mktime(input.timetuple())))
+
+converters = {
+    'timestamp': timestamp_converter
+}
 
 
-def inject_variables(text, variables):
-    return re.sub(r'\[(\w+)\]', lambda m: str(variables[m.group(1)]), text)
+def parse_boolean(input):
+    return bool(input.strip())
+
 
 parse_boolean.pattern = r'\s?\w*\s?'
 register_type(optional=parse_boolean)
@@ -43,7 +51,7 @@ def define_variable_from_result(context, variable, path):
 
 @when(u'I make a{authorized:optional} {method} request to :{path}')
 def make_request(context, authorized, method, path):
-    path = inject_variables(path, context.s)
+    path = prepare_text(path, context)
     arguments = {
         'url': "%s/%s" % (context.root, path),
         'method': method.lower(),
@@ -53,7 +61,7 @@ def make_request(context, authorized, method, path):
     if context.table:
         arguments['data'] = dict(zip(
             context.table.headings,
-            map(lambda cell: inject_variables(cell, context.s),
+            map(lambda cell: prepare_text(cell, context),
                 context.table[0].cells)
         ))
     if authorized:
@@ -66,7 +74,7 @@ def make_request(context, authorized, method, path):
 def validate_response_type(context, content_type):
     assert_in(content_type.lower(), context.r.headers['Content-Type'].lower())
     if content_type == "JSON":
-        context.response = context.r.json()
+        context.response = json.loads(context.r.text)
         print(context.response)
 
 
@@ -108,3 +116,11 @@ def validate_variable_content_multilevel(context, path, value):
 @then(u'{path} contains {value} in a result')
 def validate_variable_content(context, path, value):
     assert_in(json.loads(value), get_data(context.response, path))
+
+
+@then(u'I convert {variable} to {variable_type}')
+def convert_variable(context, variable, variable_type):
+    if variable_type in converters:
+        context.s[variable] = converters[variable_type](context.s[variable])
+    else:
+        context.s[variable] = getattr(__builtins__, variable_type)(context.s[variable])
