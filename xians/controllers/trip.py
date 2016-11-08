@@ -44,5 +44,54 @@ class Trip(Resource):
 
         return {
             'success': False,
-            'message': "Trip with a given name"
+            'message': "Trip with a given name already exists"
         }, 409
+
+
+class Segment(Resource):
+    decorators = [jwt_required()]
+    default_fields = ['user_id', 'name', 'segments']
+    default_sort = [('date', pymongo.DESCENDING)]
+
+    def post(self, trip_id, segment_id=None):
+        parser = reqparse.RequestParser()
+        parser.add_argument('origin_id', type=int, required=True,
+                            help="Origin is required!")
+        parser.add_argument('destination_id', type=int, required=True,
+                            help="Destination is required!")
+        parser.add_argument('departure',
+                            type=lambda t: datetime.fromtimestamp(int(t)))
+        parser.add_argument('arrival',
+                            type=lambda t: datetime.fromtimestamp(int(t)))
+        parser.add_argument('mode', type=int)
+        parser.add_argument('carrier', type=int)
+        parser.add_argument('price', type=float)
+        segment = parser.parse_args()
+
+        trip = db.Trip.get(trip_id)
+        if not trip:
+            return {
+                'success': False,
+                'message': "Trip with a given id doesn't exist"
+            }, 404
+
+        if not segment_id:
+            segment_id = trip.add_segment(segment)
+
+            location = '%strips/%d/segments/%d' % (
+                        request.url_root,
+                        trip_id,
+                        segment_id)
+
+            return {
+                'success': True,
+                'message': "Segment added successfully"
+            }, 201, {'Location': location}
+        else:
+            segment['_id'] = segment_id
+            segment_id = trip.update_segment(segment)
+
+            return {
+                'success': True,
+                'message': "Segment updated successfully"
+            }, 201

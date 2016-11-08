@@ -15,6 +15,10 @@ from tools import get_data
 def parse_boolean(text):
     return bool(text.strip())
 
+
+def inject_variables(text, variables):
+    return re.sub(r'\[(\w+)\]', lambda m: str(variables[m.group(1)]), text)
+
 parse_boolean.pattern = r'\s?\w*\s?'
 register_type(optional=parse_boolean)
 
@@ -39,7 +43,7 @@ def define_variable_from_result(context, variable, path):
 
 @when(u'I make a{authorized:optional} {method} request to :{path}')
 def make_request(context, authorized, method, path):
-    path = re.sub(r'\[(\w+)\]', lambda m: str(context.s[m.group(1)]), path)
+    path = inject_variables(path, context.s)
     arguments = {
         'url': "%s/%s" % (context.root, path),
         'method': method.lower(),
@@ -47,7 +51,11 @@ def make_request(context, authorized, method, path):
     }
 
     if context.table:
-        arguments['data'] = dict(zip(context.table.headings, context.table[0].cells))
+        arguments['data'] = dict(zip(
+            context.table.headings,
+            map(lambda cell: inject_variables(cell, context.s),
+                context.table[0].cells)
+        ))
     if authorized:
         arguments['headers']['authorization'] = 'JWT ' + context.access_token
 
@@ -59,6 +67,7 @@ def validate_response_type(context, content_type):
     assert_in(content_type.lower(), context.r.headers['Content-Type'].lower())
     if content_type == "JSON":
         context.response = context.r.json()
+        print(context.response)
 
 
 @then(u'I have {count} results')

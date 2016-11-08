@@ -16,3 +16,10 @@ api.add_resource(favorite.Favorites,
 
 api.add_resource(trip.Trip, '/trips', endpoint='trips')
 api.add_resource(trip.Trip, '/trips/<int:_id>', endpoint='trips_id')
+
+api.add_resource(trip.Segment,
+                 '/trips/<int:trip_id>/segments',
+                 endpoint='trips_id_segments')
+api.add_resource(trip.Segment,
+                 '/trips/<int:trip_id>/segments/<int:segment_id>',
+                 endpoint='trips_trip_id_segments_segment_id')
