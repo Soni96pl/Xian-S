@@ -109,4 +109,17 @@ Feature: Trips
 		    | Asia 2016 | 1465146000    |
 		Then I have a JSON response
 		    And I have a DictType result
+		    And success equals true in a result	
+
+	
+	@XIANS-28 @XIANS-20
+	Scenario: I want to remove a trip
+		Given I authorize as "Jakub" with password "abc"
+		When I make a authorized GET request to :trips
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that trip_id is /0/_id from a result
+		When I make a authorized DELETE request to :trips/[trip_id]
+		Then I have a JSON response
+		    And I have a DictType result
 		    And success equals true in a result

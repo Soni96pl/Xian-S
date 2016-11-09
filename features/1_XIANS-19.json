@@ -24,7 +24,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.30225396156311035, 
+            "duration": 0.2982921600341797, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -52,7 +52,7 @@
           }, 
           "name": "I make a authorized POST request to :trips", 
           "result": {
-            "duration": 0.04178309440612793, 
+            "duration": 0.04337811470031738, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -83,7 +83,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.014009952545166016, 
+            "duration": 0.012926101684570312, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -102,7 +102,7 @@
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 0.000141143798828125, 
+            "duration": 0.00011301040649414062, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -125,7 +125,7 @@
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 0.00015997886657714844, 
+            "duration": 9.989738464355469e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -160,7 +160,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.3037140369415283, 
+            "duration": 0.2951469421386719, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -188,7 +188,7 @@
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.005722999572753906, 
+            "duration": 0.006424903869628906, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -207,7 +207,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002048015594482422, 
+            "duration": 0.00020194053649902344, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -226,7 +226,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.295608520507812e-05, 
+            "duration": 7.510185241699219e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -249,7 +249,7 @@
           }, 
           "name": "I define that trip_id is /0/_id from a result", 
           "result": {
-            "duration": 7.510185241699219e-05, 
+            "duration": 7.891654968261719e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -277,7 +277,7 @@
           }, 
           "name": "I make a authorized GET request to :trips/[trip_id]", 
           "result": {
-            "duration": 0.006301164627075195, 
+            "duration": 0.01140594482421875, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -296,7 +296,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00020694732666015625, 
+            "duration": 0.0003948211669921875, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -315,7 +315,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.700920104980469e-05, 
+            "duration": 0.0006890296936035156, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -338,7 +338,7 @@
           }, 
           "name": "0/name equals \"America 2016\" in a result", 
           "result": {
-            "duration": 0.00011706352233886719, 
+            "duration": 0.000225067138671875, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -373,7 +373,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.2960789203643799, 
+            "duration": 0.3003101348876953, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -396,7 +396,7 @@
           }, 
           "name": "I define that origin is \"Hong Kong\"", 
           "result": {
-            "duration": 9.799003601074219e-05, 
+            "duration": 0.0005071163177490234, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -419,7 +419,7 @@
           }, 
           "name": "I define that destination is \"Chiang Mai\"", 
           "result": {
-            "duration": 7.891654968261719e-05, 
+            "duration": 8.487701416015625e-05, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -447,7 +447,7 @@
           }, 
           "name": "I make a GET request to :cities/[origin]", 
           "result": {
-            "duration": 0.18112707138061523, 
+            "duration": 0.17278599739074707, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -466,7 +466,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00021004676818847656, 
+            "duration": 0.0002689361572265625, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -485,7 +485,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.200241088867188e-05, 
+            "duration": 9.202957153320312e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -508,7 +508,7 @@
           }, 
           "name": "I define that origin_id is 0/_id from a result", 
           "result": {
-            "duration": 7.390975952148438e-05, 
+            "duration": 8.893013000488281e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -536,7 +536,7 @@
           }, 
           "name": "I make a GET request to :cities/[destination]", 
           "result": {
-            "duration": 0.16139006614685059, 
+            "duration": 0.18257379531860352, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -555,7 +555,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002009868621826172, 
+            "duration": 0.00020599365234375, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -574,7 +574,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.104873657226562e-05, 
+            "duration": 7.414817810058594e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -597,7 +597,7 @@
           }, 
           "name": "I define that destination_id is 0/_id from a result", 
           "result": {
-            "duration": 7.414817810058594e-05, 
+            "duration": 7.605552673339844e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -625,7 +625,7 @@
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.00869894027709961, 
+            "duration": 0.006658077239990234, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -644,7 +644,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002608299255371094, 
+            "duration": 0.00020194053649902344, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -663,7 +663,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 9.608268737792969e-05, 
+            "duration": 7.486343383789062e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -686,7 +686,7 @@
           }, 
           "name": "I define that trip_id is 0/_id from a result", 
           "result": {
-            "duration": 0.0001010894775390625, 
+            "duration": 7.700920104980469e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -714,7 +714,7 @@
           }, 
           "name": "I make a authorized POST request to :trips/[trip_id]/segments", 
           "result": {
-            "duration": 0.03609490394592285, 
+            "duration": 0.041938066482543945, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -749,7 +749,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00018310546875, 
+            "duration": 0.0003170967102050781, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -768,7 +768,7 @@
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.104873657226562e-05, 
+            "duration": 0.0001289844512939453, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -791,7 +791,7 @@
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.296966552734375e-05, 
+            "duration": 0.00015211105346679688, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -826,7 +826,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.3036789894104004, 
+            "duration": 0.3084900379180908, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -854,7 +854,7 @@
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.005990028381347656, 
+            "duration": 0.007153987884521484, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -873,7 +873,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00038504600524902344, 
+            "duration": 0.0003058910369873047, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -915,7 +915,7 @@
           }, 
           "name": "I define that trip_id is 0/_id from a result", 
           "result": {
-            "duration": 7.796287536621094e-05, 
+            "duration": 7.486343383789062e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -938,7 +938,7 @@
           }, 
           "name": "I define that segment_id is 0/segments/0/_id from a result", 
           "result": {
-            "duration": 7.414817810058594e-05, 
+            "duration": 8.416175842285156e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -961,7 +961,7 @@
           }, 
           "name": "I define that origin_id is 0/segments/0/origin_id from a result", 
           "result": {
-            "duration": 7.104873657226562e-05, 
+            "duration": 7.581710815429688e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -984,7 +984,7 @@
           }, 
           "name": "I define that destination_id is 0/segments/0/destination_id from a result", 
           "result": {
-            "duration": 7.009506225585938e-05, 
+            "duration": 7.319450378417969e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1007,7 +1007,7 @@
           }, 
           "name": "I define that departure is 0/segments/0/departure from a result", 
           "result": {
-            "duration": 7.295608520507812e-05, 
+            "duration": 8.082389831542969e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1030,7 +1030,7 @@
           }, 
           "name": "I define that arrival is 0/segments/0/arrival from a result", 
           "result": {
-            "duration": 7.200241088867188e-05, 
+            "duration": 7.390975952148438e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1053,7 +1053,7 @@
           }, 
           "name": "I convert departure to timestamp", 
           "result": {
-            "duration": 0.00010585784912109375, 
+            "duration": 9.918212890625e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1104,7 +1104,7 @@
           }, 
           "name": "I make a authorized POST request to :trips/[trip_id]/segments/[segment_id]", 
           "result": {
-            "duration": 0.008192062377929688, 
+            "duration": 0.008775949478149414, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -1141,7 +1141,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00018596649169921875, 
+            "duration": 0.00021195411682128906, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1160,7 +1160,7 @@
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.200241088867188e-05, 
+            "duration": 8.106231689453125e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1183,7 +1183,7 @@
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.296966552734375e-05, 
+            "duration": 0.00014400482177734375, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1218,7 +1218,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.2945830821990967, 
+            "duration": 0.31305384635925293, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -1246,7 +1246,7 @@
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.0058841705322265625, 
+            "duration": 0.007503032684326172, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -1265,7 +1265,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002651214599609375, 
+            "duration": 0.0002601146697998047, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1284,7 +1284,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.796287536621094e-05, 
+            "duration": 7.390975952148438e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1330,7 +1330,7 @@
           }, 
           "name": "I define that segment_id is 0/segments/0/_id from a result", 
           "result": {
-            "duration": 7.390975952148438e-05, 
+            "duration": 0.00013589859008789062, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1358,7 +1358,7 @@
           }, 
           "name": "I make a authorized DELETE request to :trips/[trip_id]/segments/[segment_id]", 
           "result": {
-            "duration": 0.005938053131103516, 
+            "duration": 0.007038116455078125, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -1377,7 +1377,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00018310546875, 
+            "duration": 0.000202178955078125, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1396,7 +1396,7 @@
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 6.985664367675781e-05, 
+            "duration": 7.891654968261719e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1419,7 +1419,7 @@
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.392333984375e-05, 
+            "duration": 9.393692016601562e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1454,7 +1454,7 @@
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.30709195137023926, 
+            "duration": 0.34345483779907227, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -1482,7 +1482,7 @@
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.00896000862121582, 
+            "duration": 0.007505893707275391, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -1501,7 +1501,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0002620220184326172, 
+            "duration": 0.0002999305725097656, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1520,7 +1520,7 @@
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 8.296966552734375e-05, 
+            "duration": 8.797645568847656e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1543,7 +1543,7 @@
           }, 
           "name": "I define that trip_id is /0/_id from a result", 
           "result": {
-            "duration": 8.0108642578125e-05, 
+            "duration": 7.82012939453125e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1571,7 +1571,7 @@
           }, 
           "name": "I make a authorized POST request to :trips/[trip_id]", 
           "result": {
-            "duration": 0.00885915756225586, 
+            "duration": 0.009133100509643555, 
             "status": "passed"
           }, 
           "step_type": "when", 
@@ -1602,7 +1602,7 @@
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.0001850128173828125, 
+            "duration": 0.00019407272338867188, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1621,7 +1621,7 @@
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.104873657226562e-05, 
+            "duration": 7.200241088867188e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1644,7 +1644,7 @@
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.392333984375e-05, 
+            "duration": 0.00023603439331054688, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1652,6 +1652,219 @@
       ], 
       "tags": [
         "XIANS-27", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:116", 
+      "name": "I want to remove a trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:117", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:34"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.33611392974853516, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:118", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:52"
+          }, 
+          "name": "I make a authorized GET request to :trips", 
+          "result": {
+            "duration": 0.008823871612548828, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:119", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:73"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0003390312194824219, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:120", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:86"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 0.00013685226440429688, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:121", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "trip_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "/0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:47"
+          }, 
+          "name": "I define that trip_id is /0/_id from a result", 
+          "result": {
+            "duration": 0.0001430511474609375, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:122", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "DELETE"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips/[trip_id]"
+              }
+            ], 
+            "location": "features/steps/steps.py:52"
+          }, 
+          "name": "I make a authorized DELETE request to :trips/[trip_id]", 
+          "result": {
+            "duration": 0.008864879608154297, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:123", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:73"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0003371238708496094, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:124", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:86"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 0.00013113021850585938, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:125", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:106"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 0.0007610321044921875, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-28", 
         "XIANS-20"
       ], 
       "type": "scenario"

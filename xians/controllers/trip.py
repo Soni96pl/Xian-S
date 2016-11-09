@@ -55,6 +55,19 @@ class Trip(Resource):
             'message': "Trip with a given name already exists"
         }, 409
 
+    def delete(self, _id):
+        trip = db.Trip.delete(_id)
+        if not trip:
+            return {
+                'success': True,
+                'message': "Trip with a given id doesn't exist"
+            }, 404
+
+        return {
+            'success': True,
+            'message': "Trip removed successfully"
+        }, 200
+
 
 class Segment(Resource):
     decorators = [jwt_required()]
