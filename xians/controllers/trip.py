@@ -22,7 +22,7 @@ class Trip(Resource):
                               fields=fields,
                               sort=sort)
 
-    def post(self):
+    def post(self, _id=None):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str, required=True,
                             help="Name is required!")
@@ -32,15 +32,23 @@ class Trip(Resource):
                             help="Date is required!")
         params = parser.parse_args()
 
-        trip = db.Trip.add(current_identity['_id'], **params)
+        if not _id:
+            trip = db.Trip.add(current_identity['_id'], **params)
 
-        if trip:
-            location = '%strips/%s' % (request.url_root, trip.inserted_id)
+            if trip:
+                location = '%strips/%s' % (request.url_root, trip.inserted_id)
 
-            return {
-                'success': True,
-                'message': "Trip added successfully"
-            }, 201, {'Location': location}
+                return {
+                    'success': True,
+                    'message': "Trip added successfully"
+                }, 201, {'Location': location}
+        else:
+            trip = db.Trip.update(_id, params)
+            if trip:
+                return {
+                    'success': True,
+                    'message': "Trip updated successfully"
+                }, 201
 
         return {
             'success': False,
