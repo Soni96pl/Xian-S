@@ -39,8 +39,7 @@ class Trip(Resource):
             trip_id = db.Trip.add(trip)
             success = trip_id is not False
         else:
-            trip['_id'] = trip_id
-            success = db.Trip.update(trip)
+            success = db.Trip.update(trip_id, trip)
 
         if success:
             message = "Trip upserted successfully"
@@ -52,8 +51,8 @@ class Trip(Resource):
 
         return {'success': success, 'message': message}, code, headers
 
-    def delete(self, _id):
-        success = db.Trip.delete(_id)
+    def delete(self, trip_id):
+        success = db.Trip.delete(trip_id)
         if success:
             message = "Trip removed successfully"
             code = 200
@@ -96,8 +95,7 @@ class Segment(Resource):
             segment_id = trip.add_segment(segment)
             success = segment_id is not False
         else:
-            segment['_id'] = segment_id
-            success = trip.update_segment(segment)
+            success = trip.update_segment(segment_id, segment)
 
         if success:
             message = "Segment upserted successfully"
