@@ -13,22 +13,19 @@ class User(Resource):
                             help="Password is required!")
         parser.add_argument('email', type=str, required=True,
                             help="Email is required!")
-        params = parser.parse_args()
+        user = parser.parse_args()
 
-        user = db.User.add(**params)
+        headers = {}
 
-        if user:
-            location = '%susers/%s' % (request.url_root, user.inserted_id)
-            headers = {
-                'Location': location
-            }
+        user_id = db.User.add(user)
+        success = user_id is not False
 
-            return {
-                'success': True,
-                'message': "Signed up successfully"
-            }, 201, headers
+        if success:
+            headers['Location'] = '%susers/%s' % (request.url_root, user_id)
+            message = "Signed up successfully"
+            code = 201
+        else:
+            message = "User with a given name or email already exists"
+            code = 409
 
-        return {
-            'success': False,
-            'message': "User with a given name or email already exists"
-        }, 409
+        return {'success': success, 'message': message}, code, headers
