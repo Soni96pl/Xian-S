@@ -15,14 +15,14 @@ class Trip(Resource):
     default_fields = ['user_id', 'name', 'segments']
     default_sort = [('date', pymongo.DESCENDING)]
 
-    def get(self, _id=None):
+    def get(self, trip_id=None):
         fields, sort = self.get_query()
 
-        return db.Trip.search(_id=_id,
+        return db.Trip.search(_id=trip_id,
                               fields=fields,
                               sort=sort)
 
-    def post(self, _id=None):
+    def post(self, trip_id=None):
         parser = reqparse.RequestParser()
         parser.add_argument('name', type=str, required=True,
                             help="Name is required!")
@@ -30,43 +30,38 @@ class Trip(Resource):
                             type=lambda t: datetime.fromtimestamp(int(t)),
                             required=True,
                             help="Date is required!")
-        params = parser.parse_args()
+        trip = parser.parse_args()
+        trip['user_id'] = current_identity['_id']
 
-        if not _id:
-            trip = db.Trip.add(current_identity['_id'], **params)
+        headers = {}
 
-            if trip:
-                location = '%strips/%s' % (request.url_root, trip.inserted_id)
-
-                return {
-                    'success': True,
-                    'message': "Trip added successfully"
-                }, 201, {'Location': location}
+        if not trip_id:
+            trip_id = db.Trip.add(trip)
+            success = trip_id is not False
         else:
-            trip = db.Trip.update(_id, params)
-            if trip:
-                return {
-                    'success': True,
-                    'message': "Trip updated successfully"
-                }, 201
+            trip['_id'] = trip_id
+            success = db.Trip.update(trip)
 
-        return {
-            'success': False,
-            'message': "Trip with a given name already exists"
-        }, 409
+        if success:
+            message = "Trip upserted successfully"
+            headers['Location'] = '%strips/%s' % (request.url_root, trip_id)
+            code = 201
+        else:
+            message = "Trip with a given name already exists"
+            code = 409
+
+        return {'success': success, 'message': message}, code, headers
 
     def delete(self, _id):
-        trip = db.Trip.delete(_id)
-        if not trip:
-            return {
-                'success': True,
-                'message': "Trip with a given id doesn't exist"
-            }, 404
+        success = db.Trip.delete(_id)
+        if success:
+            message = "Trip removed successfully"
+            code = 200
+        else:
+            message = "Trip with a given id doesn't exist"
+            code = 404
 
-        return {
-            'success': True,
-            'message': "Trip removed successfully"
-        }, 200
+        return {'success': success, 'message': message}, code
 
 
 class Segment(Resource):
@@ -88,34 +83,36 @@ class Segment(Resource):
         parser.add_argument('carrier', type=int)
         parser.add_argument('price', type=float)
         segment = parser.parse_args()
+        headers = {}
 
         trip = db.Trip.get(trip_id)
         if not trip:
             return {
                 'success': False,
                 'message': "Trip with a given id doesn't exist"
-            }, 404
+            }, 404, headers
 
         if not segment_id:
             segment_id = trip.add_segment(segment)
-
-            location = '%strips/%d/segments/%d' % (
-                        request.url_root,
-                        trip_id,
-                        segment_id)
-
-            return {
-                'success': True,
-                'message': "Segment added successfully"
-            }, 201, {'Location': location}
+            success = segment_id is not False
         else:
             segment['_id'] = segment_id
-            segment_id = trip.update_segment(segment)
+            success = trip.update_segment(segment)
 
-            return {
-                'success': True,
-                'message': "Segment updated successfully"
-            }, 201
+        if success:
+            message = "Segment upserted successfully"
+            code = 201
+            headers['Location'] = '%strips/%d/segments/%d' % (
+                request.url_root,
+                trip_id,
+                segment_id
+            )
+        else:
+            message = "Segment conflicts with another one"
+            code = 409
+
+        trip.save()
+        return {'success': success, 'message': message}, code, headers
 
     def delete(self, trip_id, segment_id):
         trip = db.Trip.get(trip_id)
@@ -125,13 +122,14 @@ class Segment(Resource):
                 'message': "Trip with a given id doesn't exist"
             }, 404
 
-        if not trip.remove_segment(segment_id):
-            return {
-                'success': False,
-                'message': "Segment with a given id doesn't exist"
-            }, 404
+        success = trip.remove_segment(segment_id)
+        if success:
+            message = "Segment removed successfully"
+            code = 200
+        else:
+            message = "Segment with a given id doesn't exist"
+            code = 404
 
-        return {
-            'success': True,
-            'message': "Segment removed successfully"
-        }, 201
+        trip.save()
+
+        return {'success': success, 'message': message}, code
