@@ -35,11 +35,8 @@ class Trip(Resource):
 
         headers = {}
 
-        if not trip_id:
-            trip_id = db.Trip.add(trip)
-            success = trip_id is not False
-        else:
-            success = db.Trip.update(trip_id, trip)
+        trip_id = db.Trip.upsert(trip, trip_id)
+        success = trip_id is not False
 
         if success:
             message = "Trip upserted successfully"
