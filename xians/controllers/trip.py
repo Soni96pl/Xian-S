@@ -89,10 +89,10 @@ class Segment(Resource):
             }, 404, headers
 
         if not segment_id:
-            segment_id = trip.add_segment(segment)
+            segment_id = trip.add_sub('segments', segment)
             success = segment_id is not False
         else:
-            success = trip.update_segment(segment_id, segment)
+            success = trip.update_sub('segments', segment_id, segment)
 
         if success:
             message = "Segment upserted successfully"
@@ -117,7 +117,7 @@ class Segment(Resource):
                 'message': "Trip with a given id doesn't exist"
             }, 404
 
-        success = trip.remove_segment(segment_id)
+        success = trip.remove_sub('segments', segment_id)
         if success:
             message = "Segment removed successfully"
             code = 200
