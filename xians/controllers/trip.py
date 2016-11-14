@@ -12,7 +12,7 @@ from xians.resource import Resource
 
 class Trip(Resource):
     decorators = [jwt_required()]
-    default_fields = ['user_id', 'name', 'segments']
+    default_fields = ['user_id', 'name', 'transport']
     default_sort = [('date', pymongo.DESCENDING)]
 
     def get(self, trip_id=None):
@@ -60,12 +60,12 @@ class Trip(Resource):
         return {'success': success, 'message': message}, code
 
 
-class Segment(Resource):
+class Transport(Resource):
     decorators = [jwt_required()]
-    default_fields = ['user_id', 'name', 'segments']
+    default_fields = ['user_id', 'name', 'transport']
     default_sort = [('date', pymongo.DESCENDING)]
 
-    def post(self, trip_id, segment_id=None):
+    def post(self, trip_id, transport_id=None):
         parser = reqparse.RequestParser()
         parser.add_argument('origin_id', type=int, required=True,
                             help="Origin is required!")
@@ -78,7 +78,7 @@ class Segment(Resource):
         parser.add_argument('mode', type=int)
         parser.add_argument('carrier', type=int)
         parser.add_argument('price', type=float)
-        segment = parser.parse_args()
+        transport = parser.parse_args()
         headers = {}
 
         trip = db.Trip.get(trip_id)
@@ -88,28 +88,28 @@ class Segment(Resource):
                 'message': "Trip with a given id doesn't exist"
             }, 404, headers
 
-        if not segment_id:
-            segment_id = trip.add_sub('segments', segment)
-            success = segment_id is not False
+        if not transport_id:
+            transport_id = trip.add_sub('transport', transport)
+            success = transport_id is not False
         else:
-            success = trip.update_sub('segments', segment_id, segment)
+            success = trip.update_sub('transport', transport_id, transport)
 
         if success:
-            message = "Segment upserted successfully"
+            message = "Transportation segment upserted successfully"
             code = 201
-            headers['Location'] = '%strips/%d/segments/%d' % (
+            headers['Location'] = '%strips/%d/transport/%d' % (
                 request.url_root,
                 trip_id,
-                segment_id
+                transport_id
             )
         else:
-            message = "Segment conflicts with another one"
+            message = "Transportation segment conflicts with another one"
             code = 409
 
         trip.save()
         return {'success': success, 'message': message}, code, headers
 
-    def delete(self, trip_id, segment_id):
+    def delete(self, trip_id, transport_id):
         trip = db.Trip.get(trip_id)
         if not trip:
             return {
@@ -117,12 +117,12 @@ class Segment(Resource):
                 'message': "Trip with a given id doesn't exist"
             }, 404
 
-        success = trip.remove_sub('segments', segment_id)
+        success = trip.remove_sub('transport', transport_id)
         if success:
-            message = "Segment removed successfully"
+            message = "Transportion segment removed successfully"
             code = 200
         else:
-            message = "Segment with a given id doesn't exist"
+            message = "Transportation segment with a given id doesn't exist"
             code = 404
 
         trip.save()
