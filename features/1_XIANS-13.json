@@ -20,11 +20,11 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:22"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.29466700553894043, 
+            "duration": 0.32516002655029297, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -43,11 +43,11 @@
                 "value": "\"Bangkok\""
               }
             ], 
-            "location": "features/steps/steps.py:30"
+            "location": "features/steps/steps.py:41"
           }, 
           "name": "I define that city is \"Bangkok\"", 
           "result": {
-            "duration": 0.0001049041748046875, 
+            "duration": 0.0001010894775390625, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -71,11 +71,11 @@
                 "value": "cities/[city]"
               }
             ], 
-            "location": "features/steps/steps.py:40"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a GET request to :cities/[city]", 
           "result": {
-            "duration": 0.1490020751953125, 
+            "duration": 0.06026601791381836, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -90,11 +90,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:57"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00016498565673828125, 
+            "duration": 0.006906032562255859, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -113,11 +113,11 @@
                 "value": "/0/_id"
               }
             ], 
-            "location": "features/steps/steps.py:35"
+            "location": "features/steps/steps.py:46"
           }, 
           "name": "I define that city_id is /0/_id from a result", 
           "result": {
-            "duration": 8.511543273925781e-05, 
+            "duration": 6.890296936035156e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -141,11 +141,11 @@
                 "value": "favorites/[city_id]"
               }
             ], 
-            "location": "features/steps/steps.py:40"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized PUT request to :favorites/[city_id]", 
           "result": {
-            "duration": 0.007266998291015625, 
+            "duration": 0.005950927734375, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -160,11 +160,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:57"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00033402442932128906, 
+            "duration": 0.00016498565673828125, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -179,11 +179,11 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:69"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 0.00014090538024902344, 
+            "duration": 5.698204040527344e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -202,11 +202,11 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:89"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 0.00010991096496582031, 
+            "duration": 6.699562072753906e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -237,11 +237,11 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:22"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.3001899719238281, 
+            "duration": 0.32625603675842285, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -265,11 +265,11 @@
                 "value": "favorites"
               }
             ], 
-            "location": "features/steps/steps.py:40"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized GET request to :favorites", 
           "result": {
-            "duration": 0.006108999252319336, 
+            "duration": 0.013232946395874023, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -284,11 +284,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:57"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00016498565673828125, 
+            "duration": 0.00023603439331054688, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -303,11 +303,11 @@
                 "value": "ListType"
               }
             ], 
-            "location": "features/steps/steps.py:69"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.796287536621094e-05, 
+            "duration": 7.009506225585938e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -326,11 +326,11 @@
                 "value": "\"Bangkok\""
               }
             ], 
-            "location": "features/steps/steps.py:89"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "0/name equals \"Bangkok\" in a result", 
           "result": {
-            "duration": 9.393692016601562e-05, 
+            "duration": 9.989738464355469e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -361,11 +361,11 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:22"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.2904319763183594, 
+            "duration": 0.3181629180908203, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -384,11 +384,11 @@
                 "value": "\"Bangkok\""
               }
             ], 
-            "location": "features/steps/steps.py:30"
+            "location": "features/steps/steps.py:41"
           }, 
           "name": "I define that city is \"Bangkok\"", 
           "result": {
-            "duration": 9.822845458984375e-05, 
+            "duration": 9.202957153320312e-05, 
             "status": "passed"
           }, 
           "step_type": "given"
@@ -412,11 +412,11 @@
                 "value": "cities/[city]"
               }
             ], 
-            "location": "features/steps/steps.py:40"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a GET request to :cities/[city]", 
           "result": {
-            "duration": 0.15842008590698242, 
+            "duration": 0.05977582931518555, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -431,11 +431,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:57"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00015997886657714844, 
+            "duration": 0.0002357959747314453, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -454,11 +454,11 @@
                 "value": "/0/_id"
               }
             ], 
-            "location": "features/steps/steps.py:35"
+            "location": "features/steps/steps.py:46"
           }, 
           "name": "I define that city_id is /0/_id from a result", 
           "result": {
-            "duration": 7.987022399902344e-05, 
+            "duration": 9.989738464355469e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -482,11 +482,11 @@
                 "value": "favorites/[city_id]"
               }
             ], 
-            "location": "features/steps/steps.py:40"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized DELETE request to :favorites/[city_id]", 
           "result": {
-            "duration": 0.005234956741333008, 
+            "duration": 0.009533882141113281, 
             "status": "passed"
           }, 
           "step_type": "when"
@@ -501,11 +501,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:57"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00015807151794433594, 
+            "duration": 0.000286102294921875, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -520,11 +520,11 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:69"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.605552673339844e-05, 
+            "duration": 6.198883056640625e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -543,11 +543,11 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:89"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.392333984375e-05, 
+            "duration": 7.510185241699219e-05, 
             "status": "passed"
           }, 
           "step_type": "then"

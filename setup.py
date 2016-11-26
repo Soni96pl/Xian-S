@@ -47,7 +47,7 @@ setup(
         'xiandb'
     ],
     dependency_links=[
-        'https://github.com/Kuba77/Xian-C/tarball/master#egg=xiandc',
+        'https://github.com/Kuba77/Xian-C/tarball/master#egg=xianc',
         'https://github.com/Kuba77/Xian-DB/tarball/master#egg=xiandb',
         'https://github.com/Kuba77/flask-jwt/tarball/master#egg=Flask-JWT'
     ],

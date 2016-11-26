@@ -5,7 +5,6 @@ from behave import given, when, then
 from behave.matchers import register_type
 from nose.tools import assert_in, assert_equals
 
-import re
 import requests
 import types
 import time
@@ -35,7 +34,7 @@ register_type(optional=parse_boolean)
 def authorize(context, name, password):
     name, password = (json.loads(name), json.loads(password))
     request = requests.post("%s/auth" % (context.root),
-                            data={'name': name, 'password': password})
+                            json={'name': name, 'password': password})
     context.access_token = request.json()['access_token']
 
 
@@ -64,6 +63,10 @@ def make_request(context, authorized, method, path):
             map(lambda cell: prepare_text(cell, context),
                 context.table[0].cells)
         ))
+    elif context.text:
+        arguments['headers']['Content-type'] = 'application/json'
+        arguments['data'] = prepare_text(context.text, context)
+
     if authorized:
         arguments['headers']['authorization'] = 'JWT ' + context.access_token
 

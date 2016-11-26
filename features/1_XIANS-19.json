@@ -3,12 +3,12 @@
   "elements": [
     {
       "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:14", 
+      "location": "features/1_XIANS-19.feature:15", 
       "name": "I want to add a new trip", 
       "steps": [
         {
           "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:15", 
+          "location": "features/1_XIANS-19.feature:16", 
           "match": {
             "arguments": [
               {
@@ -20,18 +20,18 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:34"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.3066868782043457, 
+            "duration": 0.32206010818481445, 
             "status": "passed"
           }, 
           "step_type": "given"
         }, 
         {
           "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:16", 
+          "location": "features/1_XIANS-19.feature:17", 
           "match": {
             "arguments": [
               {
@@ -48,30 +48,24 @@
                 "value": "trips"
               }
             ], 
-            "location": "features/steps/steps.py:52"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized POST request to :trips", 
           "result": {
-            "duration": 0.030430078506469727, 
+            "duration": 0.0750420093536377, 
             "status": "passed"
           }, 
           "step_type": "when", 
-          "table": {
-            "headings": [
-              "name", 
-              "date"
-            ], 
-            "rows": [
-              [
-                "America 2016", 
-                "1465146000"
-              ]
-            ]
-          }
+          "text": [
+            "{", 
+            "    \"name\": \"America 2016\",", 
+            "    \"date\": {\"$date\": 1465146000000}", 
+            "}"
+          ]
         }, 
         {
           "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:19", 
+          "location": "features/1_XIANS-19.feature:24", 
           "match": {
             "arguments": [
               {
@@ -79,18 +73,18 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:73"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.025031089782714844, 
+            "duration": 0.01755690574645996, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:20", 
+          "location": "features/1_XIANS-19.feature:25", 
           "match": {
             "arguments": [
               {
@@ -98,18 +92,18 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 0.00010204315185546875, 
+            "duration": 8.893013000488281e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:21", 
+          "location": "features/1_XIANS-19.feature:26", 
           "match": {
             "arguments": [
               {
@@ -121,11 +115,11 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:106"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 0.00010204315185546875, 
+            "duration": 0.00021600723266601562, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -139,12 +133,12 @@
     }, 
     {
       "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:25", 
-      "name": "I want to get trip details", 
+      "location": "features/1_XIANS-19.feature:30", 
+      "name": "I want to update a trip", 
       "steps": [
         {
           "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:26", 
+          "location": "features/1_XIANS-19.feature:31", 
           "match": {
             "arguments": [
               {
@@ -156,18 +150,18 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:34"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.31022000312805176, 
+            "duration": 0.3241848945617676, 
             "status": "passed"
           }, 
           "step_type": "given"
         }, 
         {
           "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:27", 
+          "location": "features/1_XIANS-19.feature:32", 
           "match": {
             "arguments": [
               {
@@ -184,138 +178,30 @@
                 "value": "trips"
               }
             ], 
-            "location": "features/steps/steps.py:52"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.005925178527832031, 
+            "duration": 0.012784957885742188, 
             "status": "passed"
           }, 
           "step_type": "when"
         }, 
         {
           "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:28", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.000186920166015625, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:29", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 7.200241088867188e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:30", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "trip_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "/0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that trip_id is /0/_id from a result", 
-          "result": {
-            "duration": 7.390975952148438e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:31", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips/[trip_id]"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized GET request to :trips/[trip_id]", 
-          "result": {
-            "duration": 0.007112979888916016, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:32", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.00022101402282714844, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
           "location": "features/1_XIANS-19.feature:33", 
           "match": {
             "arguments": [
               {
-                "name": "result_type", 
-                "value": "ListType"
+                "name": "content_type", 
+                "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:76"
           }, 
-          "name": "I have a ListType result", 
+          "name": "I have a JSON response", 
           "result": {
-            "duration": 7.796287536621094e-05, 
+            "duration": 0.00017690658569335938, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -326,1208 +212,22 @@
           "match": {
             "arguments": [
               {
-                "name": "path", 
-                "value": "0/name"
-              }, 
-              {
-                "name": "value", 
-                "value": "\"America 2016\""
-              }
-            ], 
-            "location": "features/steps/steps.py:106"
-          }, 
-          "name": "0/name equals \"America 2016\" in a result", 
-          "result": {
-            "duration": 0.00011396408081054688, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }
-      ], 
-      "tags": [
-        "XIANS-23", 
-        "XIANS-20"
-      ], 
-      "type": "scenario"
-    }, 
-    {
-      "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:38", 
-      "name": "I want to add transport to the trip", 
-      "steps": [
-        {
-          "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:39", 
-          "match": {
-            "arguments": [
-              {
-                "name": "name", 
-                "value": "\"Jakub\""
-              }, 
-              {
-                "name": "password", 
-                "value": "\"abc\""
-              }
-            ], 
-            "location": "features/steps/steps.py:34"
-          }, 
-          "name": "I authorize as \"Jakub\" with password \"abc\"", 
-          "result": {
-            "duration": 0.30230283737182617, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:40", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "origin"
-              }, 
-              {
-                "name": "value", 
-                "value": "\"Hong Kong\""
-              }
-            ], 
-            "location": "features/steps/steps.py:42"
-          }, 
-          "name": "I define that origin is \"Hong Kong\"", 
-          "result": {
-            "duration": 0.00011682510375976562, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:41", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "destination"
-              }, 
-              {
-                "name": "value", 
-                "value": "\"Chiang Mai\""
-              }
-            ], 
-            "location": "features/steps/steps.py:42"
-          }, 
-          "name": "I define that destination is \"Chiang Mai\"", 
-          "result": {
-            "duration": 0.00015401840209960938, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:42", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": "", 
-                "value": false
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "cities/[origin]"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a GET request to :cities/[origin]", 
-          "result": {
-            "duration": 0.15935611724853516, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:43", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.00021195411682128906, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:44", 
-          "match": {
-            "arguments": [
-              {
                 "name": "result_type", 
                 "value": "ListType"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.510185241699219e-05, 
+            "duration": 5.888938903808594e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:45", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "origin_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that origin_id is 0/_id from a result", 
-          "result": {
-            "duration": 7.987022399902344e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:46", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": "", 
-                "value": false
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "cities/[destination]"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a GET request to :cities/[destination]", 
-          "result": {
-            "duration": 0.16467714309692383, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:47", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.0002110004425048828, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:48", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 7.414817810058594e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:49", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "destination_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that destination_id is 0/_id from a result", 
-          "result": {
-            "duration": 8.296966552734375e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:50", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized GET request to :trips", 
-          "result": {
-            "duration": 0.0058040618896484375, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:51", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.0001900196075439453, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:52", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 7.581710815429688e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:53", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "trip_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that trip_id is 0/_id from a result", 
-          "result": {
-            "duration": 7.390975952148438e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:54", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "POST"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips/[trip_id]/transport"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized POST request to :trips/[trip_id]/transport", 
-          "result": {
-            "duration": 0.03514218330383301, 
-            "status": "passed"
-          }, 
-          "step_type": "when", 
-          "table": {
-            "headings": [
-              "origin_id", 
-              "destination_id", 
-              "departure", 
-              "arrival"
-            ], 
-            "rows": [
-              [
-                "[origin_id]", 
-                "[destination_id]", 
-                "1467781200", 
-                "1467792000"
-              ]
-            ]
-          }
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:57", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.0004029273986816406, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:58", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "DictType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a DictType result", 
-          "result": {
-            "duration": 9.894371032714844e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:59", 
-          "match": {
-            "arguments": [
-              {
-                "name": "path", 
-                "value": "success"
-              }, 
-              {
-                "name": "value", 
-                "value": "true"
-              }
-            ], 
-            "location": "features/steps/steps.py:106"
-          }, 
-          "name": "success equals true in a result", 
-          "result": {
-            "duration": 0.00010895729064941406, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }
-      ], 
-      "tags": [
-        "XIANS-24", 
-        "XIANS-20"
-      ], 
-      "type": "scenario"
-    }, 
-    {
-      "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:63", 
-      "name": "I want to update transport of a trip", 
-      "steps": [
-        {
-          "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:64", 
-          "match": {
-            "arguments": [
-              {
-                "name": "name", 
-                "value": "\"Jakub\""
-              }, 
-              {
-                "name": "password", 
-                "value": "\"abc\""
-              }
-            ], 
-            "location": "features/steps/steps.py:34"
-          }, 
-          "name": "I authorize as \"Jakub\" with password \"abc\"", 
-          "result": {
-            "duration": 0.2982480525970459, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:65", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized GET request to :trips", 
-          "result": {
-            "duration": 0.006268978118896484, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:66", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.00029397010803222656, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:67", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 7.390975952148438e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:68", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "trip_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that trip_id is 0/_id from a result", 
-          "result": {
-            "duration": 0.00020384788513183594, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:69", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "transport_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that transport_id is 0/transport/0/_id from a result", 
-          "result": {
-            "duration": 8.106231689453125e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:70", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "origin_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/origin_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that origin_id is 0/transport/0/origin_id from a result", 
-          "result": {
-            "duration": 7.319450378417969e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:71", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "destination_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/destination_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that destination_id is 0/transport/0/destination_id from a result", 
-          "result": {
-            "duration": 7.200241088867188e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:72", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "departure"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/departure"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that departure is 0/transport/0/departure from a result", 
-          "result": {
-            "duration": 7.081031799316406e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:73", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "arrival"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/arrival"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that arrival is 0/transport/0/arrival from a result", 
-          "result": {
-            "duration": 7.605552673339844e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:74", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "departure"
-              }, 
-              {
-                "name": "variable_type", 
-                "value": "timestamp"
-              }
-            ], 
-            "location": "features/steps/steps.py:121"
-          }, 
-          "name": "I convert departure to timestamp", 
-          "result": {
-            "duration": 8.797645568847656e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:75", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "arrival"
-              }, 
-              {
-                "name": "variable_type", 
-                "value": "timestamp"
-              }
-            ], 
-            "location": "features/steps/steps.py:121"
-          }, 
-          "name": "I convert arrival to timestamp", 
-          "result": {
-            "duration": 7.486343383789062e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:76", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "POST"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips/[trip_id]/transport/[transport_id]"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized POST request to :trips/[trip_id]/transport/[transport_id]", 
-          "result": {
-            "duration": 0.006654024124145508, 
-            "status": "passed"
-          }, 
-          "step_type": "when", 
-          "table": {
-            "headings": [
-              "origin_id", 
-              "destination_id", 
-              "departure", 
-              "arrival", 
-              "price"
-            ], 
-            "rows": [
-              [
-                "[origin_id]", 
-                "[destination_id]", 
-                "[departure]", 
-                "[arrival]", 
-                "10"
-              ]
-            ]
-          }
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:79", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.00018405914306640625, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:80", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "DictType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a DictType result", 
-          "result": {
-            "duration": 7.104873657226562e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:81", 
-          "match": {
-            "arguments": [
-              {
-                "name": "path", 
-                "value": "success"
-              }, 
-              {
-                "name": "value", 
-                "value": "true"
-              }
-            ], 
-            "location": "features/steps/steps.py:106"
-          }, 
-          "name": "success equals true in a result", 
-          "result": {
-            "duration": 8.320808410644531e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }
-      ], 
-      "tags": [
-        "XIANS-25", 
-        "XIANS-20"
-      ], 
-      "type": "scenario"
-    }, 
-    {
-      "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:86", 
-      "name": "I want to remove transport from a trip", 
-      "steps": [
-        {
-          "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:87", 
-          "match": {
-            "arguments": [
-              {
-                "name": "name", 
-                "value": "\"Jakub\""
-              }, 
-              {
-                "name": "password", 
-                "value": "\"abc\""
-              }
-            ], 
-            "location": "features/steps/steps.py:34"
-          }, 
-          "name": "I authorize as \"Jakub\" with password \"abc\"", 
-          "result": {
-            "duration": 0.29882192611694336, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:88", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized GET request to :trips", 
-          "result": {
-            "duration": 0.006696939468383789, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:89", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.0002951622009277344, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:90", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 7.796287536621094e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:91", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "trip_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that trip_id is 0/_id from a result", 
-          "result": {
-            "duration": 8.511543273925781e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:92", 
-          "match": {
-            "arguments": [
-              {
-                "name": "variable", 
-                "value": "transport_id"
-              }, 
-              {
-                "name": "path", 
-                "value": "0/transport/0/_id"
-              }
-            ], 
-            "location": "features/steps/steps.py:47"
-          }, 
-          "name": "I define that transport_id is 0/transport/0/_id from a result", 
-          "result": {
-            "duration": 7.319450378417969e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:93", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "DELETE"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips/[trip_id]/transport/[transport_id]"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized DELETE request to :trips/[trip_id]/transport/[transport_id]", 
-          "result": {
-            "duration": 0.00840902328491211, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:94", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.0007448196411132812, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:95", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "DictType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a DictType result", 
-          "result": {
-            "duration": 0.00014400482177734375, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:96", 
-          "match": {
-            "arguments": [
-              {
-                "name": "path", 
-                "value": "success"
-              }, 
-              {
-                "name": "value", 
-                "value": "true"
-              }
-            ], 
-            "location": "features/steps/steps.py:106"
-          }, 
-          "name": "success equals true in a result", 
-          "result": {
-            "duration": 9.512901306152344e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }
-      ], 
-      "tags": [
-        "XIANS-26", 
-        "XIANS-20"
-      ], 
-      "type": "scenario"
-    }, 
-    {
-      "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:100", 
-      "name": "I want to update a trip", 
-      "steps": [
-        {
-          "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:101", 
-          "match": {
-            "arguments": [
-              {
-                "name": "name", 
-                "value": "\"Jakub\""
-              }, 
-              {
-                "name": "password", 
-                "value": "\"abc\""
-              }
-            ], 
-            "location": "features/steps/steps.py:34"
-          }, 
-          "name": "I authorize as \"Jakub\" with password \"abc\"", 
-          "result": {
-            "duration": 0.2978839874267578, 
-            "status": "passed"
-          }, 
-          "step_type": "given"
-        }, 
-        {
-          "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:102", 
-          "match": {
-            "arguments": [
-              {
-                "name": "authorized", 
-                "original": " authorized", 
-                "value": true
-              }, 
-              {
-                "name": "method", 
-                "value": "GET"
-              }, 
-              {
-                "name": "path", 
-                "value": "trips"
-              }
-            ], 
-            "location": "features/steps/steps.py:52"
-          }, 
-          "name": "I make a authorized GET request to :trips", 
-          "result": {
-            "duration": 0.00713801383972168, 
-            "status": "passed"
-          }, 
-          "step_type": "when"
-        }, 
-        {
-          "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:103", 
-          "match": {
-            "arguments": [
-              {
-                "name": "content_type", 
-                "value": "JSON"
-              }
-            ], 
-            "location": "features/steps/steps.py:73"
-          }, 
-          "name": "I have a JSON response", 
-          "result": {
-            "duration": 0.00022482872009277344, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:104", 
-          "match": {
-            "arguments": [
-              {
-                "name": "result_type", 
-                "value": "ListType"
-              }
-            ], 
-            "location": "features/steps/steps.py:86"
-          }, 
-          "name": "I have a ListType result", 
-          "result": {
-            "duration": 8.296966552734375e-05, 
-            "status": "passed"
-          }, 
-          "step_type": "then"
-        }, 
-        {
-          "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:105", 
+          "location": "features/1_XIANS-19.feature:35", 
           "match": {
             "arguments": [
               {
@@ -1539,18 +239,18 @@
                 "value": "/0/_id"
               }
             ], 
-            "location": "features/steps/steps.py:47"
+            "location": "features/steps/steps.py:46"
           }, 
           "name": "I define that trip_id is /0/_id from a result", 
           "result": {
-            "duration": 7.510185241699219e-05, 
+            "duration": 6.890296936035156e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:106", 
+          "location": "features/1_XIANS-19.feature:36", 
           "match": {
             "arguments": [
               {
@@ -1560,37 +260,26 @@
               }, 
               {
                 "name": "method", 
-                "value": "POST"
+                "value": "PATCH"
               }, 
               {
                 "name": "path", 
-                "value": "trips/[trip_id]"
+                "value": "trips/[trip_id]/name"
               }
             ], 
-            "location": "features/steps/steps.py:52"
+            "location": "features/steps/steps.py:51"
           }, 
-          "name": "I make a authorized POST request to :trips/[trip_id]", 
+          "name": "I make a authorized PATCH request to :trips/[trip_id]/name", 
           "result": {
-            "duration": 0.0073947906494140625, 
+            "duration": 0.008020162582397461, 
             "status": "passed"
           }, 
           "step_type": "when", 
-          "table": {
-            "headings": [
-              "name", 
-              "date"
-            ], 
-            "rows": [
-              [
-                "Asia 2016", 
-                "1465146000"
-              ]
-            ]
-          }
+          "text": "\"Asia 2016\""
         }, 
         {
           "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:109", 
+          "location": "features/1_XIANS-19.feature:40", 
           "match": {
             "arguments": [
               {
@@ -1598,18 +287,18 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:73"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00020503997802734375, 
+            "duration": 0.0001709461212158203, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:110", 
+          "location": "features/1_XIANS-19.feature:41", 
           "match": {
             "arguments": [
               {
@@ -1617,18 +306,18 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.700920104980469e-05, 
+            "duration": 5.793571472167969e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:111", 
+          "location": "features/1_XIANS-19.feature:42", 
           "match": {
             "arguments": [
               {
@@ -1640,11 +329,11 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:106"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 9.298324584960938e-05, 
+            "duration": 7.319450378417969e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1658,12 +347,12 @@
     }, 
     {
       "keyword": "Scenario", 
-      "location": "features/1_XIANS-19.feature:115", 
-      "name": "I want to remove a trip", 
+      "location": "features/1_XIANS-19.feature:46", 
+      "name": "I want to get trip details", 
       "steps": [
         {
           "keyword": "Given", 
-          "location": "features/1_XIANS-19.feature:116", 
+          "location": "features/1_XIANS-19.feature:47", 
           "match": {
             "arguments": [
               {
@@ -1675,18 +364,18 @@
                 "value": "\"abc\""
               }
             ], 
-            "location": "features/steps/steps.py:34"
+            "location": "features/steps/steps.py:33"
           }, 
           "name": "I authorize as \"Jakub\" with password \"abc\"", 
           "result": {
-            "duration": 0.3026430606842041, 
+            "duration": 0.31275320053100586, 
             "status": "passed"
           }, 
           "step_type": "given"
         }, 
         {
           "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:117", 
+          "location": "features/1_XIANS-19.feature:48", 
           "match": {
             "arguments": [
               {
@@ -1703,18 +392,18 @@
                 "value": "trips"
               }
             ], 
-            "location": "features/steps/steps.py:52"
+            "location": "features/steps/steps.py:51"
           }, 
           "name": "I make a authorized GET request to :trips", 
           "result": {
-            "duration": 0.005629062652587891, 
+            "duration": 0.01427006721496582, 
             "status": "passed"
           }, 
           "step_type": "when"
         }, 
         {
           "keyword": "Then", 
-          "location": "features/1_XIANS-19.feature:118", 
+          "location": "features/1_XIANS-19.feature:49", 
           "match": {
             "arguments": [
               {
@@ -1722,18 +411,18 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:73"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00018906593322753906, 
+            "duration": 0.0002658367156982422, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:119", 
+          "location": "features/1_XIANS-19.feature:50", 
           "match": {
             "arguments": [
               {
@@ -1741,18 +430,18 @@
                 "value": "ListType"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a ListType result", 
           "result": {
-            "duration": 7.081031799316406e-05, 
+            "duration": 8.392333984375e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "And", 
-          "location": "features/1_XIANS-19.feature:120", 
+          "location": "features/1_XIANS-19.feature:51", 
           "match": {
             "arguments": [
               {
@@ -1764,18 +453,18 @@
                 "value": "/0/_id"
               }
             ], 
-            "location": "features/steps/steps.py:47"
+            "location": "features/steps/steps.py:46"
           }, 
           "name": "I define that trip_id is /0/_id from a result", 
           "result": {
-            "duration": 7.486343383789062e-05, 
+            "duration": 7.891654968261719e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
         }, 
         {
           "keyword": "When", 
-          "location": "features/1_XIANS-19.feature:121", 
+          "location": "features/1_XIANS-19.feature:52", 
           "match": {
             "arguments": [
               {
@@ -1785,21 +474,704 @@
               }, 
               {
                 "name": "method", 
-                "value": "DELETE"
+                "value": "GET"
               }, 
               {
                 "name": "path", 
                 "value": "trips/[trip_id]"
               }
             ], 
-            "location": "features/steps/steps.py:52"
+            "location": "features/steps/steps.py:51"
           }, 
-          "name": "I make a authorized DELETE request to :trips/[trip_id]", 
+          "name": "I make a authorized GET request to :trips/[trip_id]", 
           "result": {
-            "duration": 0.005488157272338867, 
+            "duration": 0.012627840042114258, 
             "status": "passed"
           }, 
           "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:53", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0002319812774658203, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:54", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 7.295608520507812e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:55", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "name"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Asia 2016\""
+              }
+            ], 
+            "location": "features/steps/steps.py:109"
+          }, 
+          "name": "name equals \"Asia 2016\" in a result", 
+          "result": {
+            "duration": 9.679794311523438e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-23", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:59", 
+      "name": "I want to add transport to the trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:60", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:33"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.32635998725891113, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:61", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "departure_city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Hong Kong\""
+              }
+            ], 
+            "location": "features/steps/steps.py:41"
+          }, 
+          "name": "I define that departure_city is \"Hong Kong\"", 
+          "result": {
+            "duration": 0.00021004676818847656, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:62", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "arrival_city"
+              }, 
+              {
+                "name": "value", 
+                "value": "\"Chiang Mai\""
+              }
+            ], 
+            "location": "features/steps/steps.py:41"
+          }, 
+          "name": "I define that arrival_city is \"Chiang Mai\"", 
+          "result": {
+            "duration": 0.00015306472778320312, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:63", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "cities/[departure_city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a GET request to :cities/[departure_city]", 
+          "result": {
+            "duration": 0.14023399353027344, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:64", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00030112266540527344, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:65", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 9.107589721679688e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:66", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "departure_city_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that departure_city_id is 0/_id from a result", 
+          "result": {
+            "duration": 7.700920104980469e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:67", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": "", 
+                "value": false
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "cities/[arrival_city]"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a GET request to :cities/[arrival_city]", 
+          "result": {
+            "duration": 0.07957100868225098, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:68", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0002319812774658203, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:69", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 6.794929504394531e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:70", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "arrival_city_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that arrival_city_id is 0/_id from a result", 
+          "result": {
+            "duration": 6.604194641113281e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:71", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized GET request to :trips", 
+          "result": {
+            "duration": 0.009975910186767578, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:72", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00026106834411621094, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:73", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 8.296966552734375e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:74", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "trip_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that trip_id is 0/_id from a result", 
+          "result": {
+            "duration": 0.0002148151397705078, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:75", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "PATCH"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips/[trip_id]/transport"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized PATCH request to :trips/[trip_id]/transport", 
+          "result": {
+            "duration": 0.13466382026672363, 
+            "status": "passed"
+          }, 
+          "step_type": "when", 
+          "text": [
+            "{", 
+            "    \"carrier\": {", 
+            "        \"name\": \"DragonAir\"", 
+            "    },", 
+            "    \"code\": \"KA232\",", 
+            "    \"mode\": \"FLIGHT\",", 
+            "    \"departure\": {", 
+            "        \"station\": {", 
+            "            \"name\": \"Hong Kong International Airport\",", 
+            "            \"type\": \"AIRPORT\",", 
+            "            \"city\": [departure_city_id]", 
+            "        },", 
+            "        \"time\": {\"$date\": 1467781200000}", 
+            "    },", 
+            "    \"arrival\": {", 
+            "        \"station\": {", 
+            "            \"name\": \"Chiang Mai International Airport\",", 
+            "            \"type\": \"AIRPORT\",", 
+            "            \"city\": [arrival_city_id]", 
+            "        },", 
+            "        \"time\": {\"$date\": 1467792000000}", 
+            "    }", 
+            "}"
+          ]
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:101", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0001919269561767578, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:102", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 6.508827209472656e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:103", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:109"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 8.487701416015625e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-24", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:107", 
+      "name": "I want to update transport of a trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:108", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:33"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.3191208839416504, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:109", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized GET request to :trips", 
+          "result": {
+            "duration": 0.015861034393310547, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:110", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0006601810455322266, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:111", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 0.0001239776611328125, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:112", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "trip_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that trip_id is 0/_id from a result", 
+          "result": {
+            "duration": 0.0001220703125, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:113", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "PATCH"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips/[trip_id]/transport/0"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized PATCH request to :trips/[trip_id]/transport/0", 
+          "result": {
+            "duration": 0.021812915802001953, 
+            "status": "passed"
+          }, 
+          "step_type": "when", 
+          "text": [
+            "{", 
+            "    \"price\": {", 
+            "        \"value\": 100.00,", 
+            "        \"currency\": \"USD\"", 
+            "    }", 
+            "}"
+          ]
         }, 
         {
           "keyword": "Then", 
@@ -1811,11 +1183,11 @@
                 "value": "JSON"
               }
             ], 
-            "location": "features/steps/steps.py:73"
+            "location": "features/steps/steps.py:76"
           }, 
           "name": "I have a JSON response", 
           "result": {
-            "duration": 0.00018095970153808594, 
+            "duration": 0.0008471012115478516, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1830,11 +1202,11 @@
                 "value": "DictType"
               }
             ], 
-            "location": "features/steps/steps.py:86"
+            "location": "features/steps/steps.py:89"
           }, 
           "name": "I have a DictType result", 
           "result": {
-            "duration": 7.200241088867188e-05, 
+            "duration": 7.510185241699219e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1853,11 +1225,437 @@
                 "value": "true"
               }
             ], 
-            "location": "features/steps/steps.py:106"
+            "location": "features/steps/steps.py:109"
           }, 
           "name": "success equals true in a result", 
           "result": {
-            "duration": 8.296966552734375e-05, 
+            "duration": 0.0001289844512939453, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-25", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:129", 
+      "name": "I want to remove transport from a trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:130", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:33"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.3240790367126465, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:131", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized GET request to :trips", 
+          "result": {
+            "duration": 0.013293027877807617, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:132", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0004439353942871094, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:133", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 0.00010204315185546875, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:134", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "trip_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that trip_id is 0/_id from a result", 
+          "result": {
+            "duration": 9.012222290039062e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:135", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "DELETE"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips/[trip_id]/transport/0"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized DELETE request to :trips/[trip_id]/transport/0", 
+          "result": {
+            "duration": 0.013102054595947266, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:136", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.0002551078796386719, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:137", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 8.20159912109375e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:138", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:109"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 9.703636169433594e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }
+      ], 
+      "tags": [
+        "XIANS-26", 
+        "XIANS-20"
+      ], 
+      "type": "scenario"
+    }, 
+    {
+      "keyword": "Scenario", 
+      "location": "features/1_XIANS-19.feature:142", 
+      "name": "I want to remove a trip", 
+      "steps": [
+        {
+          "keyword": "Given", 
+          "location": "features/1_XIANS-19.feature:143", 
+          "match": {
+            "arguments": [
+              {
+                "name": "name", 
+                "value": "\"Jakub\""
+              }, 
+              {
+                "name": "password", 
+                "value": "\"abc\""
+              }
+            ], 
+            "location": "features/steps/steps.py:33"
+          }, 
+          "name": "I authorize as \"Jakub\" with password \"abc\"", 
+          "result": {
+            "duration": 0.33165884017944336, 
+            "status": "passed"
+          }, 
+          "step_type": "given"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:144", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "GET"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized GET request to :trips", 
+          "result": {
+            "duration": 0.008965015411376953, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:145", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00028514862060546875, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:146", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "ListType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a ListType result", 
+          "result": {
+            "duration": 0.00021696090698242188, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:147", 
+          "match": {
+            "arguments": [
+              {
+                "name": "variable", 
+                "value": "trip_id"
+              }, 
+              {
+                "name": "path", 
+                "value": "/0/_id"
+              }
+            ], 
+            "location": "features/steps/steps.py:46"
+          }, 
+          "name": "I define that trip_id is /0/_id from a result", 
+          "result": {
+            "duration": 0.00010085105895996094, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "When", 
+          "location": "features/1_XIANS-19.feature:148", 
+          "match": {
+            "arguments": [
+              {
+                "name": "authorized", 
+                "original": " authorized", 
+                "value": true
+              }, 
+              {
+                "name": "method", 
+                "value": "DELETE"
+              }, 
+              {
+                "name": "path", 
+                "value": "trips/[trip_id]"
+              }
+            ], 
+            "location": "features/steps/steps.py:51"
+          }, 
+          "name": "I make a authorized DELETE request to :trips/[trip_id]", 
+          "result": {
+            "duration": 0.00946187973022461, 
+            "status": "passed"
+          }, 
+          "step_type": "when"
+        }, 
+        {
+          "keyword": "Then", 
+          "location": "features/1_XIANS-19.feature:149", 
+          "match": {
+            "arguments": [
+              {
+                "name": "content_type", 
+                "value": "JSON"
+              }
+            ], 
+            "location": "features/steps/steps.py:76"
+          }, 
+          "name": "I have a JSON response", 
+          "result": {
+            "duration": 0.00024509429931640625, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:150", 
+          "match": {
+            "arguments": [
+              {
+                "name": "result_type", 
+                "value": "DictType"
+              }
+            ], 
+            "location": "features/steps/steps.py:89"
+          }, 
+          "name": "I have a DictType result", 
+          "result": {
+            "duration": 8.106231689453125e-05, 
+            "status": "passed"
+          }, 
+          "step_type": "then"
+        }, 
+        {
+          "keyword": "And", 
+          "location": "features/1_XIANS-19.feature:151", 
+          "match": {
+            "arguments": [
+              {
+                "name": "path", 
+                "value": "success"
+              }, 
+              {
+                "name": "value", 
+                "value": "true"
+              }
+            ], 
+            "location": "features/steps/steps.py:109"
+          }, 
+          "name": "success equals true in a result", 
+          "result": {
+            "duration": 9.584426879882812e-05, 
             "status": "passed"
           }, 
           "step_type": "then"
@@ -1871,10 +1669,11 @@
     }
   ], 
   "keyword": "Feature", 
-  "location": "features/1_XIANS-19.feature:2", 
+  "location": "features/1_XIANS-19.feature:3", 
   "name": "Trips", 
   "status": "passed", 
   "tags": [
+    "XIANS-21", 
     "XIANS-19"
   ]
 }

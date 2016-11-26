@@ -1,3 +1,4 @@
+@XIANS-21
 @XIANS-19
 Feature: Trips
 	#In order to be able to log my trips
@@ -14,8 +15,28 @@ Feature: Trips
 	Scenario: I want to add a new trip
 		Given I authorize as "Jakub" with password "abc"
 		When I make a authorized POST request to :trips
-		    | name          | date          |
-		    | America 2016  | 1465146000    |
+		    """
+		    {
+		        "name": "America 2016",
+		        "date": {"$date": 1465146000000}
+		    }
+		    """
+		Then I have a JSON response
+		    And I have a DictType result
+		    And success equals true in a result	
+
+	
+	@XIANS-27 @XIANS-20
+	Scenario: I want to update a trip
+		Given I authorize as "Jakub" with password "abc"
+		When I make a authorized GET request to :trips
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that trip_id is /0/_id from a result
+		When I make a authorized PATCH request to :trips/[trip_id]/name
+		    """
+		    "Asia 2016"
+		    """
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result	
@@ -30,30 +51,53 @@ Feature: Trips
 		    And I define that trip_id is /0/_id from a result
 		When I make a authorized GET request to :trips/[trip_id]
 		Then I have a JSON response
-		    And I have a ListType result
-		    And 0/name equals "America 2016" in a result	
+		    And I have a DictType result
+		    And name equals "Asia 2016" in a result	
 
 	
 	@XIANS-24 @XIANS-20
 	Scenario: I want to add transport to the trip
 		Given I authorize as "Jakub" with password "abc"
-		  And I define that origin is "Hong Kong"
-		  And I define that destination is "Chiang Mai"
-		When I make a GET request to :cities/[origin]
+		  And I define that departure_city is "Hong Kong"
+		  And I define that arrival_city is "Chiang Mai"
+		When I make a GET request to :cities/[departure_city]
 		Then I have a JSON response
 		    And I have a ListType result
-		    And I define that origin_id is 0/_id from a result
-		When I make a GET request to :cities/[destination]
+		    And I define that departure_city_id is 0/_id from a result
+		When I make a GET request to :cities/[arrival_city]
 		Then I have a JSON response
 		    And I have a ListType result
-		    And I define that destination_id is 0/_id from a result
+		    And I define that arrival_city_id is 0/_id from a result
 		When I make a authorized GET request to :trips
 		Then I have a JSON response
 		    And I have a ListType result
 		    And I define that trip_id is 0/_id from a result
-		When I make a authorized POST request to :trips/[trip_id]/transport
-		  | origin_id   | destination_id    | departure   | arrival    |
-		  | [origin_id] | [destination_id]  | 1467781200  | 1467792000 |
+		When I make a authorized PATCH request to :trips/[trip_id]/transport
+		    """
+		    {
+		        "carrier": {
+		            "name": "DragonAir"
+		        },
+		        "code": "KA232",
+		        "mode": "FLIGHT",
+		        "departure": {
+		            "station": {
+		                "name": "Hong Kong International Airport",
+		                "type": "AIRPORT",
+		                "city": [departure_city_id]
+		            },
+		            "time": {"$date": 1467781200000}
+		        },
+		        "arrival": {
+		            "station": {
+		                "name": "Chiang Mai International Airport",
+		                "type": "AIRPORT",
+		                "city": [arrival_city_id]
+		            },
+		            "time": {"$date": 1467792000000}
+		        }
+		    }
+		    """
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result	
@@ -66,16 +110,15 @@ Feature: Trips
 		Then I have a JSON response
 		    And I have a ListType result
 		    And I define that trip_id is 0/_id from a result
-		    And I define that transport_id is 0/transport/0/_id from a result
-		    And I define that origin_id is 0/transport/0/origin_id from a result
-		    And I define that destination_id is 0/transport/0/destination_id from a result
-		    And I define that departure is 0/transport/0/departure from a result
-		    And I define that arrival is 0/transport/0/arrival from a result
-		    And I convert departure to timestamp
-		    And I convert arrival to timestamp
-		When I make a authorized POST request to :trips/[trip_id]/transport/[transport_id]
-		  | origin_id   | destination_id    | departure   | arrival     | price |
-		  | [origin_id] | [destination_id]  | [departure] | [arrival]   | 10    |
+		When I make a authorized PATCH request to :trips/[trip_id]/transport/0
+		    """
+		    {
+		        "price": {
+		            "value": 100.00,
+		            "currency": "USD"
+		        }
+		    }
+		    """
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result
@@ -89,23 +132,7 @@ Feature: Trips
 		Then I have a JSON response
 		    And I have a ListType result
 		    And I define that trip_id is 0/_id from a result
-		    And I define that transport_id is 0/transport/0/_id from a result
-		When I make a authorized DELETE request to :trips/[trip_id]/transport/[transport_id]
-		Then I have a JSON response
-		    And I have a DictType result
-		    And success equals true in a result	
-
-	
-	@XIANS-27 @XIANS-20
-	Scenario: I want to update a trip
-		Given I authorize as "Jakub" with password "abc"
-		When I make a authorized GET request to :trips
-		Then I have a JSON response
-		    And I have a ListType result
-		    And I define that trip_id is /0/_id from a result
-		When I make a authorized POST request to :trips/[trip_id]
-		    | name      | date          |
-		    | Asia 2016 | 1465146000    |
+		When I make a authorized DELETE request to :trips/[trip_id]/transport/0
 		Then I have a JSON response
 		    And I have a DictType result
 		    And success equals true in a result	

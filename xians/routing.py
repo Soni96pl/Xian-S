@@ -6,20 +6,18 @@ api.add_resource(city.City, '/cities/<string:name>', endpoint='city_name')
 
 
 api.add_resource(user.User, '/users')
+api.add_resource(user.User, '/users/<int:_id>', endpoint='users_id')
+api.add_resource(user.User,
+                 '/users/<int:_id>/<path:path>',
+                 endpoint='users_id_path')
 
+api.add_resource(trip.Trip, '/trips', endpoint='trips')
+api.add_resource(trip.Trip, '/trips/<int:_id>', endpoint='trips_id_field')
+api.add_resource(trip.Trip,
+                 '/trips/<int:_id>/<path:path>',
+                 endpoint='trips_id_path')
 
 api.add_resource(favorite.Favorites, '/favorites', endpoint='favorites')
 api.add_resource(favorite.Favorites,
                  '/favorites/<int:city_id>',
                  endpoint='favorites_city_id')
-
-
-api.add_resource(trip.Trip, '/trips', endpoint='trips')
-api.add_resource(trip.Trip, '/trips/<int:trip_id>', endpoint='trips_id')
-
-api.add_resource(trip.Transport,
-                 '/trips/<int:trip_id>/transport',
-                 endpoint='trips_trip_id_transport')
-api.add_resource(trip.Transport,
-                 '/trips/<int:trip_id>/transport/<int:transport_id>',
-                 endpoint='trips_trip_id_transport_transport_id')
