@@ -138,6 +138,58 @@ Feature: Trips
 		    And success equals true in a result	
 
 	
+	@XIANS-29 @XIANS-20
+	Scenario: I want to add lodging.
+		Given I authorize as "Jakub" with password "abc"
+		  And I define that city is "Kuala Lumpur"
+		When I make a GET request to :cities/[city]
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that city_id is 0/_id from a result
+		When I make a authorized GET request to :trips
+		Then I have a JSON response
+		    And I have a ListType result
+		    And I define that trip_id is 0/_id from a result
+		When I make a authorized PATCH request to :trips/[trip_id]/lodging
+		    """
+		    {
+		        "city": [city_id],
+		        "check_in": {"$date": 1480507200000},
+		        "check_out": {"$date": 1480845600000},
+		        "property": {
+		            "name": "Irsia Bed and Breakfast",
+		            "type": "BNB",
+		            "location": {
+		                "address": "Lorong 1/77a, Imbi, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+		                "coordinates": [3.141482, 101.709702],
+		                "instructions": "Off Jalan Pudu (Behind Berjaya Times Square)"
+		            },
+		            "contact": {
+		                "phone": 60333411077,
+		                "email": "irsiabnb@reservations.com"
+		            }
+		        },
+		        "room": {
+		            "name": "Standard 4 Bed Mixed Dorm",
+		            "type": "DORM"
+		        },
+		        "balance": {
+		            "deposit": {
+		                "value": 2.11,
+		                "currency": "USD"
+		            },
+		            "remaining": {
+		                "value": 60.72,
+		                "currency": "MYR"
+		            }
+		        }
+		    }
+		    """
+		Then I have a JSON response
+		    And I have a DictType result
+		    And success equals true in a result		
+
+	
 	@XIANS-28 @XIANS-20
 	Scenario: I want to remove a trip
 		Given I authorize as "Jakub" with password "abc"
